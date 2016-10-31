@@ -1,5 +1,5 @@
 {
-  "name": "HelloWorld",
+  "name": "weplan",
   "scripts": {
     "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
     "lite": "lite-server",
