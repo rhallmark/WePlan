@@ -9,19 +9,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const core_1 = require('@angular/core');
-const platform_browser_1 = require('@angular/platform-browser');
-const app_component_1 = require('./app.component');
-const menu_component_1 = require('./menu/menu.component');
-const wpSignup_component_1 = require('./wpSignup/wpSignup.component');
-let AppModule = class AppModule {
+let SignUpFormComponent = class SignUpFormComponent {
 };
-AppModule = __decorate([
-    core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule],
-        declarations: [app_component_1.AppComponent, menu_component_1.MenuComponent, wpSignup_component_1.SignUpFormComponent],
-        bootstrap: [app_component_1.AppComponent]
+SignUpFormComponent = __decorate([
+    core_1.Component({
+        selector: 'wpSignup',
+        templateUrl: 'app/wpSignup/wpSignup.html'
     }), 
     __metadata('design:paramtypes', [])
-], AppModule);
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+], SignUpFormComponent);
+exports.SignUpFormComponent = SignUpFormComponent;
+//# sourceMappingURL=wpSignup.component.js.map
