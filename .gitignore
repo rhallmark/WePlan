@@ -1,0 +1,28 @@
+# Ignore composer PHAR object
+composer.phar
+
+# Ignore OS X bull
+.DS_Store
+
+# Ignore swap files
+*~
+*.swp
+
+#Ignore vagrant files
+.vagrant/*
+
+# Ignore log files
+*.log
+
+# Ignore node_modules and vendor code
+/node_modules
+/vendor
+
+public/css
+public/build
+public/js
+public/app
+public/node_modules
+
+
+.env
