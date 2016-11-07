@@ -5,7 +5,7 @@ import { MenuService } from './menu.service';
 @Component({
   selector: 'menu',
   templateUrl: './app/menu/menu.html',
-  styleUrls: [ './app/menu/menu.css' ],
+  styleUrls: [ './css/app.css' ],
   providers: [ MenuService ]
 })
 

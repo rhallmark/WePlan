@@ -18,6 +18,7 @@ var elixirTypscript = require('elixir-typescript-angular2');
 elixir(function(mix) {
     mix.sass('app.scss');
     mix.styles('app.css', 'public/build/css/app.css', 'public/css');
+    mix.styles('**/*.css');
 
     package_path = './package.json';
     if (fs.statSync(package_path) !== undefined) {
@@ -26,11 +27,13 @@ elixir(function(mix) {
 
       for (var dependency in dependencies) {
         if (dependencies.hasOwnProperty(dependency)) {
+          console.log(dependency);
           full_path = 'node_modules/' + dependency + "/";
           mix.copy(full_path, 'public/' + full_path);
         }
       }
     }
+    mix.copy('./resources/assets/app/**/*.html', 'public/app/');
 
     mix.typescript('**/*.ts', './public');
 });
