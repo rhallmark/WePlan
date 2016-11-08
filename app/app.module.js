@@ -10,15 +10,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 const core_1 = require('@angular/core');
 const platform_browser_1 = require('@angular/platform-browser');
+const forms_1 = require('@angular/forms');
+const router_1 = require('@angular/router');
+const common_1 = require('@angular/common');
 const app_component_1 = require('./app.component');
+const wpNavbar_component_1 = require('./wpNavbar/wpNavbar.component');
 const menu_component_1 = require('./menu/menu.component');
 const wpSignup_component_1 = require('./wpSignup/wpSignup.component');
+const wpSignIn_component_1 = require('./wpSignIn/wpSignIn.component');
+const wpFeedback_component_1 = require('./wpFeedback/wpFeedback.component');
+const wpHome_component_1 = require('./wpHome/wpHome.component');
+const about_component_1 = require('./about/about.component');
+const wpSignLocked_component_1 = require('./wpSignLocked/wpSignLocked.component');
+const router_config_1 = require('./router-config');
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule],
-        declarations: [app_component_1.AppComponent, menu_component_1.MenuComponent, wpSignup_component_1.SignUpFormComponent],
+        imports: [platform_browser_1.BrowserModule, common_1.CommonModule, router_1.RouterModule.forRoot(router_config_1.routeConfig), forms_1.FormsModule],
+        declarations: [app_component_1.AppComponent, menu_component_1.MenuComponent, wpSignup_component_1.SignUpComponent,
+            wpSignIn_component_1.SignInComponent, wpFeedback_component_1.FeedbackFormComponent, wpNavbar_component_1.NavbarComponent,
+            wpHome_component_1.HomeComponent, about_component_1.AboutComponent, wpSignLocked_component_1.SignLocked],
         bootstrap: [app_component_1.AppComponent]
     }), 
     __metadata('design:paramtypes', [])

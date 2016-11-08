@@ -9,14 +9,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const core_1 = require('@angular/core');
-let SignUpFormComponent = class SignUpFormComponent {
+let SignUpComponent = class SignUpComponent {
 };
-SignUpFormComponent = __decorate([
+SignUpComponent = __decorate([
     core_1.Component({
         selector: 'wpSignup',
         templateUrl: 'app/wpSignup/wpSignup.html'
     }), 
     __metadata('design:paramtypes', [])
-], SignUpFormComponent);
-exports.SignUpFormComponent = SignUpFormComponent;
+], SignUpComponent);
+exports.SignUpComponent = SignUpComponent;
 //# sourceMappingURL=wpSignup.component.js.map

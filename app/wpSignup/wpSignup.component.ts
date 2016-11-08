@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
     selector: 'wpSignup',
     templateUrl: 'app/wpSignup/wpSignup.html'
 })
-export class SignUpFormComponent {
+export class SignUpComponent {
     
 }
