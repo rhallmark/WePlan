@@ -11,7 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 const core_1 = require('@angular/core');
 let NavbarComponent = class NavbarComponent {
     constructor() {
-        this.isCollapsed = true;
     }
     ngOnInit() {
         //this.menuItems = ROUTES.filter(menuItem => menuItem.menuType !== MenuType.BRAND);

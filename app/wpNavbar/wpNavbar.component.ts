@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
   public menuItems: any[];
   public brandMenu: any;
-  isCollapsed = true;
+
 
   constructor() {}
 

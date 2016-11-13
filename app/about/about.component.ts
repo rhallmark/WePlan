@@ -10,6 +10,6 @@ export class AboutComponent {
 	title : string;
 
 	constructor(){
-		this.title = "About wePlan Events";
+		this.title = "About WePlan Events";
 	}
 }

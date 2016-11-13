@@ -13,16 +13,20 @@ import { SignLocked } from './wpSignLocked/wpSignLocked.component';
 
 const indexRoute: Route = {
     path: "",
-    component: HomeComponent
+    component: SignLocked
 }
 
 const fallbackRoute: Route = {
     path: "**",
-    component: HomeComponent
+    component: SignLocked
 }
 
 export const routeConfig: Route[] = [
     indexRoute,
+    {
+        path: 'home',
+        component: SignLocked //until we figure this out
+    },
     {
         path: 'about',
         component: AboutComponent
