@@ -1,6 +1,6 @@
-
 <!-- Thanks to "https://codepen.io/motorlatitude/pen/JFkro" for the css inspiration -->
 <div class="body"></div>
+<h1> Your Events. Your Way. </h1>
     <div class="grad"></div>
 		<div class="header">
 			<div>we<span>Plan</span>
@@ -10,6 +10,7 @@
 	<div class="login">
     <input type="text" placeholder="username" name="user"><br>
     <input type="password" placeholder="password" name="password"><br>
-    <input type="button" value="Login">
+    <input *ngIf="pwconf" type="password" placeholder="password confirmation" name="password_confirmation"><br>
+    <input type="button" value="{{login_text}}" (click)="showLoginForm()">
+    <input type="button" value="{{signup_text}}" (click)="showSignUpForm()">
 </div>
-

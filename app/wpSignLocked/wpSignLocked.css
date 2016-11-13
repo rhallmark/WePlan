@@ -13,7 +13,7 @@ body{
 
 .body{
 	position: absolute;
-	top: -40px;
+	top: -20px;
 	left: -20px;
 	right: -40px;
 	bottom: -40px;
@@ -96,7 +96,7 @@ body{
 }
 
 .login input[type=button]{
-	width: 260px;
+	width: 122px;
 	height: 35px;
 	background: #fff;
 	border: 1px solid #fff;
@@ -138,4 +138,18 @@ body{
 
 ::-moz-input-placeholder{
    color: rgba(255,255,255,0.6);
+}
+
+
+h1 {
+	position: absolute;
+	top: calc(15%);
+	left: calc(25%);
+    color: white; 
+    font-family: 'Helvetica Neue', sans-serif; 
+    font-size: 100px; 
+    font-weight: bold; 
+    letter-spacing: -1px; 
+    line-height: 1; 
+    text-align: center; }
 }
