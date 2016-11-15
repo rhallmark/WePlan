@@ -13,12 +13,15 @@ import { HomeComponent } from './wpHome/wpHome.component';
 import { AboutComponent } from './about/about.component';
 import { SignLocked } from './wpSignLocked/wpSignLocked.component';
 import {routeConfig} from './router-config';
+import { EventsComponent } from './wpEvents/wpEvents.component';
+import { NewEventComponent } from './wpNewEvent/wpNewEvent.component';
 
 @NgModule({
   imports:      [ BrowserModule, CommonModule, RouterModule.forRoot(routeConfig), FormsModule],
   declarations: [ AppComponent, MenuComponent, SignUpComponent,
                   SignInComponent, FeedbackFormComponent, NavbarComponent,
-                  HomeComponent, AboutComponent, SignLocked ],
+                  HomeComponent, AboutComponent, SignLocked,
+                  EventsComponent, NewEventComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { 

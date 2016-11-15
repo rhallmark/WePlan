@@ -1,0 +1,1 @@
+{"version":3,"file":"wpEvents.component.js","sourceRoot":"","sources":["wpEvents.component.ts"],"names":[],"mappings":";;;;;;;;;;AAAA,uBAA0B,eAAe,CAAC,CAAA;AAQ1C;IAGC;QACC,IAAI,CAAC,KAAK,GAAG,QAAQ,CAAC;IACvB,CAAC;AACF,CAAC;AAZD;IAAC,gBAAS,CAAC;QACT,QAAQ,EAAE,UAAU;QACpB,WAAW,EAAE,4BAA4B;QACzC,SAAS,EAAE,CAAE,2BAA2B,CAAE;KAC3C,CAAC;;mBAAA;AAEW,uBAAe,kBAM3B,CAAA"}

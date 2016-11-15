@@ -10,6 +10,8 @@ import { FeedbackFormComponent } from './wpFeedback/wpFeedback.component';
 import { HomeComponent } from './wpHome/wpHome.component';
 import { AboutComponent } from './about/about.component';
 import { SignLocked } from './wpSignLocked/wpSignLocked.component';
+import { EventsComponent } from './wpEvents/wpEvents.component';
+import { NewEventComponent } from './wpNewEvent/wpNewEvent.component';
 
 const indexRoute: Route = {
     path: "",
@@ -34,6 +36,14 @@ export const routeConfig: Route[] = [
     {
         path: 'sl',
         component: SignLocked
+    },
+    {
+        path: 'events',
+        component: EventsComponent
+    },
+    {
+        path: 'new-event',
+        component: NewEventComponent
     },
     fallbackRoute
 ];
