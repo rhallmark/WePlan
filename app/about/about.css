@@ -48,17 +48,18 @@ body{
 .center {
     margin: 0 auto;
     margin-top: -20px;
-    width: 800px;
-    height:800px;
+    width: 1000px;
+    height:100%;
 }
 #main {
     background-color: white;
 }
 
-h1 {
+h1, h2 {
     text-align: center;
 }
 
-div.ov_hid {
-    overflow: hidden;
+div.content {
+    margin-left: 40px;
+    margin-right: 40px;
 }
