@@ -12,6 +12,7 @@ const core_1 = require('@angular/core');
 let AppComponent = class AppComponent {
     constructor() {
         this.title = "WePlan";
+        this.id_attribute = "";
     }
 };
 AppComponent = __decorate([

@@ -8,8 +8,10 @@ import { Component } from '@angular/core';
 
 export class AppComponent { 
 	title : string;
+	id_attribute: string;
 
 	constructor(){
 		this.title = "WePlan";
+		this.id_attribute = "";
 	}
 }
