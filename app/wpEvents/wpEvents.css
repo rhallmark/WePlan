@@ -1,7 +1,31 @@
 .container {
-    background-color: dodgerblue;
+    background-color: white;
     margin: 0 auto;
 	margin-top: -100px;
 	width: 1000px;
     height:100%;
+}
+
+.media-left img {
+	width: 100px;
+}
+
+.glyphicon {
+	font-size: 11px;
+	padding-left: 5px;
+	top: 4px;
+	opacity: 0.3;
+}
+
+.glyphicon:hover {
+	opacity: 0.9;
+}
+
+.glyphicon-edit {
+	color: darkslateblue;
+}
+
+
+.glyphicon-trash {
+	color: red;
 }

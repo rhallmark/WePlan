@@ -11,7 +11,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 const core_1 = require('@angular/core');
 let NewEventComponent = class NewEventComponent {
     constructor() {
+        //if theres an id, make it event edit
+        this.submitted = false;
+        //if no id, make it new event
         this.title = "New Event";
+    }
+    onSubmit() {
+        this.submitted = true;
+        console.log(this.orgName);
+    }
+    newEvent($event) {
+        console.log($event);
     }
 };
 NewEventComponent = __decorate([

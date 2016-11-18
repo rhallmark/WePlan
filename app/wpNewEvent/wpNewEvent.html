@@ -1,9 +1,19 @@
 <div class="container">
   <h1>{{title}}</h1>
   <h1>Tell us about your event...</h1>
-  <form>
-    What organization are you with?
-      <input type="text" name="organization"><br> <br>
+  <!--Notice Change from form to div class="form-group"-->
+  <form (ngSubmit)="onSubmit()" #eventForm="ngForm">
+  <div class="form-group">
+    <!--Notice Change to label and added input-->
+    <!--https://angular.io/docs/ts/latest/guide/forms.html-->
+    <label for="organization">What organization are you with?</label>
+      <input 
+        type="text" 
+        name="organization"
+        class="form-control"
+        id="org"
+        [(ngModel)]="OrgName"
+        required><br> <br>
     What kind of event are you planning?
       <select>
         <option value="blank"></option>
@@ -11,6 +21,7 @@
         <option value="interest">Interest Meeting</option>
         <option value="event">Special Event</option>
       </select> <br> <br>
+      <!--datepicker not working? determine how to import jquery? -->
     Please enter the date and time for your event:
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,7 +45,10 @@
       </select> <br> <br>
     Additional information: 
     <input type="text" name="AddInfo"> <br>
-  </form>
 
-  <button type="button">Submit</button>
+    <button type="submit" >Submit</button>
+  </div>
+
+
+  </form>
 </div>

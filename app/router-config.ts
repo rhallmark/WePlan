@@ -30,12 +30,12 @@ export const routeConfig: Route[] = [
         component: SignLocked //until we figure this out
     },
     {
-        path: 'about',
-        component: AboutComponent
+        path: 'signin',
+        component: SignLocked
     },
     {
-        path: 'sl',
-        component: SignLocked
+        path: 'about',
+        component: AboutComponent
     },
     {
         path: 'events',

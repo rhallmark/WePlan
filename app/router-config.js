@@ -18,12 +18,12 @@ exports.routeConfig = [
         component: wpSignLocked_component_1.SignLocked //until we figure this out
     },
     {
-        path: 'about',
-        component: about_component_1.AboutComponent
+        path: 'signin',
+        component: wpSignLocked_component_1.SignLocked
     },
     {
-        path: 'sl',
-        component: wpSignLocked_component_1.SignLocked
+        path: 'about',
+        component: about_component_1.AboutComponent
     },
     {
         path: 'events',

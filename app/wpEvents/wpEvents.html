@@ -1,14 +1,39 @@
 <div class="container">
+  <br><br>
+  <button type="button" class="btn btn-primary pull-right" routerLink="add">
+	  New Event
+  </button>
   <h1>{{title}}</h1>
+
   <div class="panel panel-default">
     <div class="panel-heading">
-      My Events
+      Listed Events
     </div>
     <div class="panel-body">
-      <ul>
-      <li>Event 1</li>
-      <li>Event 2</li>
-      </ul>
+
+    <div *ngIf="eventNumber > 0">
+      <div class="media" *ngFor="let event of events, let index = index">
+        <span class="media-left">
+        </span>
+        <div class="media-body">
+          <div>
+            <h4 class="media-heading">
+              {{ event.eventName }}
+            <sup>
+              <!--<i	class="glyphicon glyphicon-edit" routerLink="edit/{{event.id}}"></i>-->
+              <i	class="glyphicon glyphicon-edit" ></i>
+              <i 	class="glyphicon glyphicon-trash" ></i>
+            </sup>
+            </h4>
+          </div>
+          <!--<rating [model]="movie" (click)="updateRating(movie)" ></rating>-->
+        </div>
+      </div>
+    </div>
+    <div *ngIf="eventNumber == 0" class="well">
+      You have not yet planned an event. Click "New Event" to get started planning!
+    </div>
+
     </div>
   </div>
   <br>

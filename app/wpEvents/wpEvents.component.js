@@ -9,9 +9,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const core_1 = require('@angular/core');
+const event_service_1 = require('../repositories/event.service');
 let EventsComponent = class EventsComponent {
-    constructor() {
-        this.title = "Events";
+    constructor(eventRepositoryService) {
+        this.eventRepositoryService = eventRepositoryService;
+        this.title = "My Events";
+        eventRepositoryService.list().then(response => {
+            this.events = response;
+            this.eventNumber = this.events.length;
+            console.log(this.events);
+        });
     }
 };
 EventsComponent = __decorate([
@@ -20,7 +27,7 @@ EventsComponent = __decorate([
         templateUrl: 'app/wpEvents/wpEvents.html',
         styleUrls: ['app/wpEvents/wpEvents.css'],
     }), 
-    __metadata('design:paramtypes', [])
+    __metadata('design:paramtypes', [event_service_1.EventRepositoryService])
 ], EventsComponent);
 exports.EventsComponent = EventsComponent;
 //# sourceMappingURL=wpEvents.component.js.map

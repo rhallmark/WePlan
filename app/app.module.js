@@ -13,6 +13,7 @@ const platform_browser_1 = require('@angular/platform-browser');
 const forms_1 = require('@angular/forms');
 const router_1 = require('@angular/router');
 const common_1 = require('@angular/common');
+const http_1 = require('@angular/http');
 const app_component_1 = require('./app.component');
 const wpNavbar_component_1 = require('./wpNavbar/wpNavbar.component');
 const menu_component_1 = require('./menu/menu.component');
@@ -22,18 +23,23 @@ const wpFeedback_component_1 = require('./wpFeedback/wpFeedback.component');
 const wpHome_component_1 = require('./wpHome/wpHome.component');
 const about_component_1 = require('./about/about.component');
 const wpSignLocked_component_1 = require('./wpSignLocked/wpSignLocked.component');
-const router_config_1 = require('./router-config');
 const wpEvents_component_1 = require('./wpEvents/wpEvents.component');
 const wpNewEvent_component_1 = require('./wpNewEvent/wpNewEvent.component');
+const event_service_1 = require('./repositories/event.service');
+const angular_in_memory_web_api_1 = require('angular-in-memory-web-api');
+const mock_api_service_1 = require('./mock-api.service');
+const router_config_1 = require('./router-config');
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, common_1.CommonModule, router_1.RouterModule.forRoot(router_config_1.routeConfig), forms_1.FormsModule],
+        imports: [platform_browser_1.BrowserModule, common_1.CommonModule, router_1.RouterModule.forRoot(router_config_1.routeConfig), forms_1.FormsModule,
+            http_1.HttpModule, angular_in_memory_web_api_1.InMemoryWebApiModule.forRoot(mock_api_service_1.MockApiService)],
         declarations: [app_component_1.AppComponent, menu_component_1.MenuComponent, wpSignup_component_1.SignUpComponent,
             wpSignIn_component_1.SignInComponent, wpFeedback_component_1.FeedbackFormComponent, wpNavbar_component_1.NavbarComponent,
             wpHome_component_1.HomeComponent, about_component_1.AboutComponent, wpSignLocked_component_1.SignLocked,
             wpEvents_component_1.EventsComponent, wpNewEvent_component_1.NewEventComponent],
+        providers: [event_service_1.EventRepositoryService],
         bootstrap: [app_component_1.AppComponent]
     }), 
     __metadata('design:paramtypes', [])
