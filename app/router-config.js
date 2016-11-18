@@ -1,4 +1,6 @@
 "use strict";
+const wpSignup_component_1 = require('./wpSignup/wpSignup.component');
+const wpSignIn_component_1 = require('./wpSignIn/wpSignIn.component');
 const about_component_1 = require('./about/about.component');
 const wpSignLocked_component_1 = require('./wpSignLocked/wpSignLocked.component');
 const wpEvents_component_1 = require('./wpEvents/wpEvents.component');
@@ -19,7 +21,11 @@ exports.routeConfig = [
     },
     {
         path: 'signin',
-        component: wpSignLocked_component_1.SignLocked
+        component: wpSignIn_component_1.SignInComponent
+    },
+    {
+        path: 'signup',
+        component: wpSignup_component_1.SignUpComponent
     },
     {
         path: 'about',

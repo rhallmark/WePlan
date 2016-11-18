@@ -31,7 +31,11 @@ export const routeConfig: Route[] = [
     },
     {
         path: 'signin',
-        component: SignLocked
+        component: SignInComponent
+    },
+        {
+        path: 'signup',
+        component: SignUpComponent
     },
     {
         path: 'about',
