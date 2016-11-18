@@ -2,13 +2,12 @@
 class Event {
     constructor(eventName, orgName, type, date, time, size, additionalInfo) {
         //Need to obtain ID from DB
-        this.eventName = eventName;
+        this.eventTitle = eventName;
         this.orgName = orgName;
-        this.type = type;
+        this.eventType = type;
         this.date = date;
         this.time = time;
-        this.size = size;
-        this.additionalInfo = additionalInfo;
+        this.info = additionalInfo;
     }
 }
 exports.Event = Event;

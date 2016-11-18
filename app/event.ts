@@ -1,23 +1,21 @@
 export class Event {
 
-    eventId: number;
-    eventName: string;
+    eventTitle: string;
     orgName: string;
-    type: string;
+    eventType: string;
     date: string;
     time: string;
-    size: string;
-    additionalInfo: string;
+    info: string;
+    eventID: number;
 
     constructor(eventName:string, orgName:string, type:string, date:string, time:string, size:string, additionalInfo:string){ 
         //Need to obtain ID from DB
-        this.eventName = eventName;
+        this.eventTitle = eventName;
         this.orgName = orgName;
-        this.type = type;
+        this.eventType = type;
         this.date = date;
-        this.time = time;
-        this.size = size;
-        this.additionalInfo = additionalInfo;
+        this.time = time
+        this.info = additionalInfo;
     }
 
 

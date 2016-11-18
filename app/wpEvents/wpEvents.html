@@ -18,13 +18,20 @@
         <div class="media-body">
           <div>
             <h4 class="media-heading">
-              {{ event.eventName }}
+              {{ event.eventTitle }}
             <sup>
               <!--<i	class="glyphicon glyphicon-edit" routerLink="edit/{{event.id}}"></i>-->
               <i	class="glyphicon glyphicon-edit" ></i>
               <i 	class="glyphicon glyphicon-trash" ></i>
             </sup>
             </h4>
+            <ul>
+              <li><h5>Organization Name: {{ event.orgName }}</h5></li>
+              <li><h5>Event Type: {{ event.eventType }}</h5></li>
+              <li><h5>Event Date: {{ event.date }}</h5></li>
+              <li><h5>Event Time: {{ event.time }}</h5></li>
+              <li><h5>Event Info: {{ event.info }}</h5></li>
+            </ul>
           </div>
           <!--<rating [model]="movie" (click)="updateRating(movie)" ></rating>-->
         </div>

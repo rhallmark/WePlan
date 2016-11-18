@@ -13,31 +13,31 @@ let MockApiService = class MockApiService {
     createDb() {
         let events = [
             {
-                eventName: "sunshine event",
-                eventId: 1,
+                eventTitle: "sunshine event",
                 orgName: "Org1",
-                type: "fundraising",
+                eventType: "fundraising",
                 date: "August 8, 2016",
-                size: "Greater than 50",
-                additionalInfo: "This is the first test event for user 1"
+                time: "12:53 PM",
+                info: "This is the first test event for user 1",
+                eventID: 1
             },
             {
-                eventName: "Rockband!",
-                eventId: 2,
+                eventTitle: "Rockband!",
                 orgName: "org2",
-                type: "awareness",
+                eventType: "awareness",
                 date: "August 8, 2016",
-                size: "Greater than 50",
-                additionalInfo: "This is the first test event for user 1"
+                time: "12:53 PM",
+                info: "This is the first test event for user 1",
+                eventID: 2
             },
             {
-                eventName: "Bar Crawl",
-                eventId: 3,
+                eventTitle: "Bar Crawl",
                 orgName: "GUI Club",
-                type: "Life Saving",
+                eventType: "Life Saving",
                 date: "August 8, 2016",
-                size: "Greater than 50",
-                additionalInfo: "This is the first test event for user 1"
+                time: "12:53 PM",
+                info: "This is the first test event for user 1",
+                eventId: 3
             }
         ];
         return {
