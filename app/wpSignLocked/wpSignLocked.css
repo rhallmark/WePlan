@@ -55,13 +55,17 @@ body{
 
 .header div span{
 	color: white !important;
-    text-shadow: -1px 0 darkgreen, 0 1px darkgreen, 1px 0 darkgreen, 0 -1px darkgreen;
+    text-shadow: -1px 0 mediumpurple, 0 1px mediumpurple, 1px 0 mediumpurple, 0 -1px mediumpurple;
 }
 
 .login{
-	position: absolute;
-	top: calc(50% - 75px);
-	left: calc(50% - 50px);
+	text-align: center;
+	position: fixed;
+    right: 0;
+    left: 0;
+	margin-top: 10%;
+    margin-right: auto;
+    margin-left: auto;
 	height: 150px;
 	width: 350px;
 	padding: 10px;
@@ -140,11 +144,15 @@ body{
    color: rgba(255,255,255,0.6);
 }
 
-
-h2 {
-	position: absolute;
+h1 { 
+	/*position: absolute;
 	top: calc(15%);
-	left: calc(20%);
+	left: calc(20%);*/
+	position: fixed;
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
     color: white; 
     font-family: 'Helvetica Neue', sans-serif; 
     font-size: 80px; 
@@ -154,15 +162,21 @@ h2 {
     text-align: center; 
 }
 
-h6 {
-	position: absolute;
-	top: calc(30%);
-	left: calc(40%);
+h2 {
+	/*position: relative;
+	top: calc(40%);
+	left: calc(50%);*/
+	position: fixed;
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
     color: white; 
     font-family: 'Helvetica Neue', sans-serif; 
-    font-size: 25px; 
     font-weight: bold; 
+	font-size: 300%;
+	font-style: italic;
     letter-spacing: -1px; 
-    line-height: 1; 
+    line-height: 3; 
     text-align: center; 
 }
