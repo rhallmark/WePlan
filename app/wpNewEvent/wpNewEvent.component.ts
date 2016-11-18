@@ -11,7 +11,7 @@ export class NewEventComponent {
 	title : string;
 	submitted : boolean = false;
     eventId: number;
-    orgName: string;
+    orgName: string="byebye";
     type: string;
     date: string;
     time: string;

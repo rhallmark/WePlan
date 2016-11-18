@@ -13,6 +13,7 @@ let NewEventComponent = class NewEventComponent {
     constructor() {
         //if theres an id, make it event edit
         this.submitted = false;
+        this.orgName = "byebye";
         //if no id, make it new event
         this.title = "New Event";
     }

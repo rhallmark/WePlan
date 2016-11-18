@@ -12,7 +12,7 @@
         name="organization"
         class="form-control"
         id="org"
-        [(ngModel)]="OrgName"
+        [(ngModel)]="orgName"
         required><br> <br>
     What kind of event are you planning?
       <select>
@@ -23,6 +23,7 @@
       </select> <br> <br>
       <!--datepicker not working? determine how to import jquery? -->
     Please enter the date and time for your event:
+    <!--
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>jQuery UI Datepicker - Default functionality</title>
@@ -35,6 +36,7 @@
       $( "#datepicker" ).datepicker();
       } );
       </script>
+      -->
     <input type="text" id="datepicker"> <br> <br>
     How many people will be attending your event?
       <select>
