@@ -13,9 +13,9 @@ class CreateEquipementTable extends Migration
      */
     public function up()
     {
-        Schema::create('equipement', function (Blueprint $table) {
+        Schema::create('equipment', function (Blueprint $table) {
             $table->integer('rentalID')->unsigned();
-            $table->foreign('rentalID')->references('equipement')->on('rentalCompanies');
+            $table->foreign('rentalID')->references('rentalId')->on('rentalCompanies');
             $table->boolean('tablesChairs');
             $table->boolean('lights');
             $table->boolean('sound');
@@ -31,6 +31,6 @@ class CreateEquipementTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('equipement');
+        Schema::dropIfExists('equipment');
     }
 }

@@ -4,9 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Equipement extends Model
+class Equipment extends Model
 {
-    use Notifiable;
+	/**
+     * The database table used by the model.
+     *
+     * @var string
+     */
+    protected $table = 'equipment';
 
     /**
      * The attributes that are mass assignable.

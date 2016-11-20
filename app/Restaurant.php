@@ -6,7 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Restaurant extends Model
 {
-    use Notifiable;
+	/**
+	 * The name of the primary key column used by the model.
+	 *
+	 * @var string
+	*/
+	protected $primaryKey = 'restID';
+	/**
+     * The database table used by the model.
+     *
+     * @var string
+     */
+    protected $table = 'restaurants';
 
     /**
      * The attributes that are mass assignable.

@@ -13,11 +13,11 @@ class CreateVenueTable extends Migration
      */
     public function up()
     {
-        Schema::create('venue', function (Blueprint $table) {
+        Schema::create('venues', function (Blueprint $table) {
             $table->increments('locationID');
-            $table->text('location');
-            $table->text('roomNumber');
-            $table->text('link');
+            $table->string('location');
+            $table->string('roomNumber');
+            $table->string('link');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateVenueTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('venue');
+        Schema::dropIfExists('venues');
     }
 }

@@ -15,7 +15,7 @@ class CreateFoodChoiceTable extends Migration
     {
         Schema::create('foodChoice', function (Blueprint $table) {
             $table->integer('restID')->unsigned();
-            $table->foreign('restID')->references('restID')->on('restaurant');
+            $table->foreign('restID')->references('restID')->on('restaurants');
             $table->boolean('breakfast');
             $table->boolean('lunch');
             $table->boolean('dinner');

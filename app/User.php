@@ -10,6 +10,18 @@ class User extends Authenticatable
     use Notifiable;
 
     /**
+     * The name of the primary key column used by the model.
+     *
+     * @var string
+    */
+    protected $primaryKey = 'id';
+    /**
+     * The database table used by the model.
+     *
+     * @var string
+     */
+    protected $table = 'users';
+    /**
      * The attributes that are mass assignable.
      *
      * @var array

@@ -6,7 +6,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class RentalCompanies extends Model
 {
-    use Notifiable;
+	/**
+	 * The name of the primary key column used by the model.
+	 *
+	 * @var string
+	*/
+	protected $primaryKey = 'rentalID';
+
+    /**
+     * The database table used by the model.
+     *
+     * @var string
+     */
+    protected $table = 'rentalCompanies';
 
     /**
      * The attributes that are mass assignable.

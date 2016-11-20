@@ -18,10 +18,16 @@ class CreateEventsTable extends Migration
             $table->increments('eventID');
             $table->integer('userID')->unsigned();
             $table->foreign('userID')->references('id')->on('users');
+            $table->integer('restID')->unsigned();
+            $table->foreign('restID')->references('restID')->on('restaurants');
+            $table->integer('locationID')->unsigned();
+            $table->foreign('locationID')->references('locationID')->on('venues');
+            $table->integer('rentalID')->unsigned();
+            $table->foreign('rentalID')->references('rentalID')->on('rentalCompanies');
             $table->text('orgName');
             $table->text('eventTitle');
             $table->text('eventType');
-            $table->date('date');
+            $table->string('date');
             $table->string('time');
             $table->text('info');
             $table->timestamps();

@@ -16,7 +16,7 @@ class CreateLocationTable extends Migration
     {
         Schema::create('location', function (Blueprint $table) {
             $table->integer('locationID')->unsigned();
-            $table->foreign('locationID')->references('locationID')->on('venue');
+            $table->foreign('locationID')->references('locationID')->on('venues');
             $table->timestamps();
         });
     }

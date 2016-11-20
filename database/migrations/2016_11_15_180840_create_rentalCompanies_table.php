@@ -15,13 +15,12 @@ class CreateRentalCompaniesTable extends Migration
     {
         Schema::create('rentalCompanies', function (Blueprint $table) {
             $table->increments('rentalID');
-            $table->text('name');
-            $table->text('address');
-            $table->text('phone');
-            $table->text('link');
-            $table->text('email');
+            $table->string('name');
+            $table->string('address');
+            $table->string('phone');
+            $table->string('link');
+            $table->string('email');
             $table->text('description');
-
             $table->timestamps();
         });
     }
