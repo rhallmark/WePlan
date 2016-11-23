@@ -18,6 +18,7 @@ export class EventRepositoryService {
 			.then(response => response.json().data as Event[]);
 	}
 
+
 	//This should get an Event based upon an id
 	public getEvent(id : number) : Promise<any> {
 		var pluck = (response) => (response && response.length) ? response[0] : undefined;

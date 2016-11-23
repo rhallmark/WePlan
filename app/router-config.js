@@ -32,7 +32,7 @@ exports.routeConfig = [
         component: about_component_1.AboutComponent
     },
     {
-        path: 'events',
+        path: 'events/:uid',
         component: wpEvents_component_1.EventsComponent
     },
     {

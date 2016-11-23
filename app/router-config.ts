@@ -42,7 +42,7 @@ export const routeConfig: Route[] = [
         component: AboutComponent
     },
     {
-        path: 'events',
+        path: 'events/:uid',
         component: EventsComponent
     },
     {
