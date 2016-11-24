@@ -5,13 +5,16 @@ body{
 	margin: 0;
 	padding: 0;
 	background: #fff;
-
 	color: #fff;
 	font-family: Arial;
 	font-size: 12px;
 }
 
-.body{
+.text {
+	margin-top: 0px;
+}
+
+/*.body{
 	position: absolute;
 	top: -20px;
 	left: -20px;
@@ -23,9 +26,9 @@ body{
 	background-size: cover;
 	-webkit-filter: blur(5px);
 	z-index: -1;
-}
+}*/
 
-.grad{
+/*.grad{
 	position: absolute;
 	top: -20px;
 	left: -20px;
@@ -33,10 +36,10 @@ body{
 	bottom: -40px;
 	width: auto;
 	height: auto;
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.65))); /* Chrome,Safari4+ */
-	z-index: 1;
+	/*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.65)));  Chrome,Safari4+ */
+	/*z-index: 1;
 	opacity: 0.7;
-}
+}*/
 
 .header{
 	position: absolute;
@@ -53,9 +56,10 @@ body{
 	font-weight: 250;
 }
 
-.header div span{
+h1 span{
 	color: white !important;
-    text-shadow: -1px 0 mediumpurple, 0 1px mediumpurple, 1px 0 mediumpurple, 0 -1px mediumpurple;
+	border: darkmagenta;
+    text-shadow: -1px 0 grey, 0 4px grey, 4px 0 grey, 0 -1px grey;
 }
 
 .login{
@@ -63,7 +67,7 @@ body{
 	position: fixed;
     right: 0;
     left: 0;
-	margin-top: 10%;
+	margin-top: 5%;
     margin-right: auto;
     margin-left: auto;
 	height: 150px;
@@ -180,3 +184,19 @@ h2 {
     line-height: 3; 
     text-align: center; 
 }
+
+/*span {
+	border: 2px solid purple;
+}*/
+
+.login-header {
+	font-size: 155%;
+	color: darkgrey;
+	font-family: 'Exo', sans-serif;
+	float:left;
+	margin-left: 12%;
+	margin-top: 10%;
+	line-height: 50px;
+	/*margin-right:80%;*/
+}
+
