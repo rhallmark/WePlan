@@ -19,7 +19,8 @@ let MockApiService = class MockApiService {
                 date: "August 8, 2016",
                 time: "12:53 PM",
                 info: "This is the first test event for user 1",
-                eventID: 1
+                eventID: 1,
+                uid: 1
             },
             {
                 eventTitle: "Rockband!",
@@ -28,7 +29,8 @@ let MockApiService = class MockApiService {
                 date: "August 8, 2016",
                 time: "12:53 PM",
                 info: "This is the first test event for user 1",
-                eventID: 2
+                eventID: 2,
+                uid: 2
             },
             {
                 eventTitle: "Bar Crawl",
@@ -37,11 +39,24 @@ let MockApiService = class MockApiService {
                 date: "August 8, 2016",
                 time: "12:53 PM",
                 info: "This is the first test event for user 1",
-                eventId: 3
+                eventID: 3,
+                uid: 1
+            }
+        ];
+        let login = [
+            {
+                username: "Russ",
+                password: "123",
+                uid: 1
+            },
+            {
+                username: "Bob",
+                password: "pass",
+                uid: 2
             }
         ];
         return {
-            events
+            events, login
         };
     }
 };

@@ -10,15 +10,37 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 const core_1 = require('@angular/core');
 const event_service_1 = require('../repositories/event.service');
+const router_1 = require('@angular/router');
 let EventsComponent = class EventsComponent {
-    constructor(eventRepositoryService) {
+    constructor(route, //what does activatedRoute do?
+        router, eventRepositoryService) {
+        this.route = route;
+        this.router = router;
         this.eventRepositoryService = eventRepositoryService;
+        this.route.params.forEach((params) => {
+            this.uid = +params['uid'];
+        });
         this.title = "My Events";
+        //console.log(this.uid);
         eventRepositoryService.list().then(response => {
-            this.events = response;
+            this.allEvents = response;
+            // Specifying which events to show
+            // Tihs is not secure or effecient
+            // This should be done with the backend
+            // POC
+            this.events = [];
+            for (var item of this.allEvents) {
+                if (item.uid == this.uid) {
+                    //add to array of events
+                    this.events.push(item);
+                }
+            }
             this.eventNumber = this.events.length;
             console.log(this.events);
         });
+    }
+    ngOnInit() {
+        //moved params to constructor
     }
 };
 EventsComponent = __decorate([
@@ -27,7 +49,7 @@ EventsComponent = __decorate([
         templateUrl: 'app/wpEvents/wpEvents.html',
         styleUrls: ['app/wpEvents/wpEvents.css'],
     }), 
-    __metadata('design:paramtypes', [event_service_1.EventRepositoryService])
+    __metadata('design:paramtypes', [router_1.ActivatedRoute, router_1.Router, event_service_1.EventRepositoryService])
 ], EventsComponent);
 exports.EventsComponent = EventsComponent;
 //# sourceMappingURL=wpEvents.component.js.map

@@ -11,7 +11,7 @@ import { HomeComponent } from './wpHome/wpHome.component';
 import { AboutComponent } from './about/about.component';
 import { SignLocked } from './wpSignLocked/wpSignLocked.component';
 import { EventsComponent } from './wpEvents/wpEvents.component';
-import { NewEventComponent } from './wpNewEvent/wpNewEvent.component';
+import { EditEventComponent } from './wpEditEvent/wpEditEvent.component';
 
 const indexRoute: Route = {
     path: "",
@@ -42,12 +42,17 @@ export const routeConfig: Route[] = [
         component: AboutComponent
     },
     {
-        path: 'events',
+        path: 'edit-event/:uid',
+        redirectTo: 'events/:uid',
+        pathMatch: 'full'
+    },
+    {
+        path: 'events/:uid',
         component: EventsComponent
     },
     {
-        path: 'new-event',
-        component: NewEventComponent
+        path: 'edit-event/:uid/:id',
+        component: EditEventComponent
     },
     fallbackRoute
 ];
