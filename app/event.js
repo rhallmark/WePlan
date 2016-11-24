@@ -1,6 +1,6 @@
 "use strict";
 class Event {
-    constructor(eventName, orgName, type, date, time, size, additionalInfo, uid) {
+    constructor(eventName, orgName, type, date, time, additionalInfo, uid) {
         //Need to obtain ID from DB
         this.eventTitle = eventName;
         this.orgName = orgName;

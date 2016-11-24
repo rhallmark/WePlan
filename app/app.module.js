@@ -25,7 +25,7 @@ const wpHome_component_1 = require('./wpHome/wpHome.component');
 const about_component_1 = require('./about/about.component');
 const wpSignLocked_component_1 = require('./wpSignLocked/wpSignLocked.component');
 const wpEvents_component_1 = require('./wpEvents/wpEvents.component');
-const wpNewEvent_component_1 = require('./wpNewEvent/wpNewEvent.component');
+const wpEditEvent_component_1 = require('./wpEditEvent/wpEditEvent.component');
 const event_service_1 = require('./repositories/event.service');
 const user_service_1 = require('./_services/user.service');
 const angular_in_memory_web_api_1 = require('angular-in-memory-web-api');
@@ -52,7 +52,7 @@ AppModule = __decorate([
             about_component_1.AboutComponent,
             wpSignLocked_component_1.SignLocked,
             wpEvents_component_1.EventsComponent,
-            wpNewEvent_component_1.NewEventComponent
+            wpEditEvent_component_1.EditEventComponent
         ],
         providers: [event_service_1.EventRepositoryService,
             user_service_1.UserService

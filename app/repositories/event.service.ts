@@ -20,9 +20,9 @@ export class EventRepositoryService {
 
 
 	//This should get an Event based upon an id
-	public getEvent(id : number) : Promise<any> {
+	public getEvent(id : number) : Promise<Event> {
 		var pluck = (response) => (response && response.length) ? response[0] : undefined;
-		return this.http.get(`${this._apiUrl}/?id=${id}`)
+		return this.http.get(`${this._apiUrl}/?eventID=${id}`)
 			.toPromise()
 			.then((response) => pluck(response.json().data))
 			.catch((response) => alert(response.json().error));

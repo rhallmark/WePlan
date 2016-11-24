@@ -4,7 +4,7 @@ const wpSignIn_component_1 = require('./wpSignIn/wpSignIn.component');
 const about_component_1 = require('./about/about.component');
 const wpSignLocked_component_1 = require('./wpSignLocked/wpSignLocked.component');
 const wpEvents_component_1 = require('./wpEvents/wpEvents.component');
-const wpNewEvent_component_1 = require('./wpNewEvent/wpNewEvent.component');
+const wpEditEvent_component_1 = require('./wpEditEvent/wpEditEvent.component');
 const indexRoute = {
     path: "",
     component: wpSignLocked_component_1.SignLocked
@@ -36,8 +36,8 @@ exports.routeConfig = [
         component: wpEvents_component_1.EventsComponent
     },
     {
-        path: 'new-event',
-        component: wpNewEvent_component_1.NewEventComponent
+        path: 'edit-event/:uid/:id',
+        component: wpEditEvent_component_1.EditEventComponent
     },
     fallbackRoute
 ];

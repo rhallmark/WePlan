@@ -18,7 +18,9 @@ import { HomeComponent } from './wpHome/wpHome.component';
 import { AboutComponent } from './about/about.component';
 import { SignLocked } from './wpSignLocked/wpSignLocked.component';
 import { EventsComponent } from './wpEvents/wpEvents.component';
-import { NewEventComponent } from './wpNewEvent/wpNewEvent.component';
+import { EditEventComponent } from './wpEditEvent/wpEditEvent.component';
+
+import { Event } from './event';
 
 import { EventRepositoryService } from './repositories/event.service';
 import { UserService } from './_services/user.service';
@@ -47,7 +49,7 @@ import {routeConfig} from './router-config';
                   AboutComponent,
                   SignLocked,
                   EventsComponent,
-                  NewEventComponent 
+                  EditEventComponent 
                   ],
   providers:    [ EventRepositoryService,
                   UserService

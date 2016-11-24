@@ -14,8 +14,13 @@
         id="org"
         [(ngModel)]="orgName"
         required><br> <br>
-    What kind of event are you planning?
-      <select>
+    <label for = "eventType">What kind of event are you planning?</label>
+      <select
+      name="eventType"
+      class="form-control"
+      id="eventType"
+      [(ngModel)]="eventType"
+      required>
         <option value="blank"></option>
         <option value="weekly">Weekly Meeting</option>
         <option value="interest">Interest Meeting</option>
