@@ -17,26 +17,28 @@ let EventsComponent = class EventsComponent {
         this.route = route;
         this.router = router;
         this.eventRepositoryService = eventRepositoryService;
+        this.allEvents = [];
+        this.events = [];
         this.route.params.forEach((params) => {
             this.uid = +params['uid'];
         });
         this.title = "My Events";
         //console.log(this.uid);
         eventRepositoryService.list().then(response => {
+            console.log(response);
             this.allEvents = response;
             // Specifying which events to show
             // Tihs is not secure or effecient
             // This should be done with the backend
             // POC
-            this.events = [];
-            for (var item of this.allEvents) {
-                if (item.uid == this.uid) {
+            for (var test of this.allEvents) {
+                if (test.uid == this.uid) {
                     //add to array of events
-                    this.events.push(item);
+                    this.events.push(test);
                 }
             }
             this.eventNumber = this.events.length;
-            console.log(this.events);
+            //console.log(this.events);
         });
     }
     ngOnInit() {

@@ -12,8 +12,8 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
 
 export class EventsComponent { 
 	title : string;
-	allEvents : Event[];
-	events : Event[];
+	allEvents : Event[]=[];
+	events : Event[]=[];
 	eventNumber : number;
 	uid: number;
 
@@ -30,22 +30,22 @@ export class EventsComponent {
 
 
 		eventRepositoryService.list().then(response => {
+				console.log(response);
 				this.allEvents = response;
 
 				// Specifying which events to show
 				// Tihs is not secure or effecient
 				// This should be done with the backend
 				// POC
-				this.events = [];
-				for (var item of this.allEvents) {
-					if (item.uid == this.uid){
+				for (var test of this.allEvents) {
+					if (test.uid == this.uid){
 						//add to array of events
-						this.events.push(item);
+						this.events.push(test);
 					}
 				}
 
 				this.eventNumber = this.events.length;
-				console.log(this.events);
+				//console.log(this.events);
 		});
 
 

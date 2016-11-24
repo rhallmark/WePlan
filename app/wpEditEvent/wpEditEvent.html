@@ -1,61 +1,132 @@
-<div class="container">
+<div id="bg" class="container">
   <h1>{{title}}</h1>
-  <h1>Tell us about your event...</h1>
-  <!--Notice Change from form to div class="form-group"-->
-  <form (ngSubmit)="onSubmit()" #eventForm="ngForm">
-  <div class="form-group">
-    <!--Notice Change to label and added input-->
-    <!--https://angular.io/docs/ts/latest/guide/forms.html-->
-    <label for="organization">What organization are you with?</label>
-      <input 
-        type="text" 
-        name="organization"
-        class="form-control"
-        id="org"
-        [(ngModel)]="orgName"
-        required><br> <br>
-    <label for = "eventType">What kind of event are you planning?</label>
-      <select
-      name="eventType"
-      class="form-control"
-      id="eventType"
-      [(ngModel)]="eventType"
-      required>
-        <option value="blank"></option>
-        <option value="weekly">Weekly Meeting</option>
-        <option value="interest">Interest Meeting</option>
-        <option value="event">Special Event</option>
-      </select> <br> <br>
-      <!--datepicker not working? determine how to import jquery? -->
-    Please enter the date and time for your event:
-    <!--
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>jQuery UI Datepicker - Default functionality</title>
-      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-      <link rel="stylesheet" href="/resources/demos/style.css">
-      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-      <script>
-      $( function() {
-      $( "#datepicker" ).datepicker();
-      } );
-      </script>
-      -->
-    <input type="text" id="datepicker"> <br> <br>
-    How many people will be attending your event?
-      <select>
-        <option value="blank"></option>
-        <option value="zero">0-25 people</option>
-        <option value="twentyfive">25-50 people</option>
-        <option value="fifty">50+ people</option>
-      </select> <br> <br>
-    Additional information: 
-    <input type="text" name="AddInfo"> <br>
+  <br>
 
-    <button type="submit" >Submit</button>
+
+  <div class="main-content">
+    <div class="panel panel-default">
+
+      <div class="panel-heading">
+        <button type="button" class="btn btn-default pull-right">Next<i class="glyphicon glyphicon-menu-right"></i></button>
+        <h4>Basic Info - Food - Venue - Equipment</h4>
+        <button type="button" class="btn btn-default pull-left"><i class="glyphicon glyphicon-menu-left"></i>Back</button>
+      </div>
+
+      <div class="panel-heading">
+        <h3>Basic Event Information</h3>
+      </div>
+
+      <div class="panel-body">
+        <!--is ngSubmit needed?-->
+        <div>
+          <div class="form-group">
+
+            <label for="eventTitle">
+              Event Title:
+            </label>
+            <input 
+              type="text" 
+              name="eventTitle"
+              class="form-control"
+              id="eventTitle"
+              [(ngModel)]="eventTitle"
+              required>
+              <br>
+
+            <label for="organization">
+              What organization are you with?
+            </label>
+            <input 
+              type="text" 
+              name="organization"
+              class="form-control"
+              id="org"
+              [(ngModel)]="orgName"
+              required>
+              <br>
+
+              <!--Determine how to make this not despecify due to typing -->
+            <label for = "eventType">
+              What kind of event are you planning?
+            </label>
+            <input 
+              list="o_eventType"
+              name="eventType"
+              class="form-control"
+              id="o_eventType"
+              [(ngModel)]="eventType"
+              required>
+              <datalist id="o_eventType">
+                <option *ngFor="let eventType of o_eventType" value={{eventType}}>
+              </datalist>
+            <br>
+
+            <!--datepicker not working? determine how to import jquery? -->
+            <!--Currently using strings for POC -->
+
+          <!--
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>jQuery UI Datepicker - Default functionality</title>
+            <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+            <link rel="stylesheet" href="/resources/demos/style.css">
+            <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+            <script>
+            $( function() {
+            $( "#datepicker" ).datepicker();
+            } );
+            </script>
+            -->
+
+          <label for="date">
+            What will be the date of your event?
+          </label>
+          <input 
+            type="text" 
+            name="date"
+            class="form-control"
+            id="date"
+            [(ngModel)]="date"
+            required>
+            <br>
+
+          <label for="time">
+            What will be the time of your event?
+          </label>
+          <input 
+            type="text" 
+            name="time"
+            class="form-control"
+            id="time"
+            [(ngModel)]="time"
+            required>
+            <br>
+
+          <label for="info">
+            Additional information:
+          </label>
+          <input 
+            type="text" 
+            name="info"
+            class="form-control"
+            id="info"
+            [(ngModel)]="info"
+            required>
+          <br>
+
+        </div>
+
+
+        </div>
+      </div>
+
+      <div class="panel-footer">
+        <button type="button" class="btn btn-primary pull-right" (click)="saveData(eventID)">Save</button>
+        <button type="button" class="btn btn-danger pull-left"(click)="returnToList('No Edits Made')">Discard</button>
+      </div>
+
+    </div>
   </div>
 
-
-  </form>
 </div>

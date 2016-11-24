@@ -45,12 +45,13 @@ let SignLocked = class SignLocked {
                 if (username == item.username) {
                     //console.log(password + '?' + item.password);
                     if (password == item.password) {
-                        console.log('succses!');
+                        //console.log('succses!');
                         this.router.navigate([`events/${item.uid}`]);
                     }
                 }
             }
-            console.log('err');
+            //DISPLAY ERROR MESSAGE HERE FOR NO LOGIN
+            //console.log('err');
         });
     }
     // submit_login(event, username, password) {

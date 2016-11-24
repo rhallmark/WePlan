@@ -28,25 +28,26 @@ export class EventRepositoryService {
 			.catch((response) => alert(response.json().error));
 	}
 
-	public add(event) : Promise<any> {
+	public add(l_event) : Promise<any> {
 		//posting json data? how does this work as posting a event object?
-		return this.http.post(this._apiUrl, event)
+		return this.http.post(this._apiUrl, l_event)
 			.toPromise()
-			.then(() => event) 
+			.then(() => l_event) 
 			.catch(response => alert(response.json().error));
 	}
 
-	public update(event) : Promise<any> {
-
-		return this.http.put(`${this._apiUrl}/${event.id}`, event)
+	public update(l_event) : Promise<any> {
+		console.log('in service');
+		console.log(l_event);
+		return this.http.put(`${this._apiUrl}/${l_event.eventID}`, l_event)
 			.toPromise()
-			.then(() => event)
+			.then(() => l_event)
 			.catch(response => alert(response.json().error));
 	}
 
-	public delete(event) : Promise<void>{
+	public delete(l_event) : Promise<void>{
 
-		return this.http.delete(`${this._apiUrl}/${event.id}`,event)
+		return this.http.delete(`${this._apiUrl}/${l_event.eventID}`,l_event)
 		.toPromise()
 		.catch(response => alert(response.json().error));
 	}
