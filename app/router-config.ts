@@ -42,6 +42,11 @@ export const routeConfig: Route[] = [
         component: AboutComponent
     },
     {
+        path: 'edit-event/:uid',
+        redirectTo: 'events/:uid',
+        pathMatch: 'full'
+    },
+    {
         path: 'events/:uid',
         component: EventsComponent
     },

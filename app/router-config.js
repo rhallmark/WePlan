@@ -32,6 +32,11 @@ exports.routeConfig = [
         component: about_component_1.AboutComponent
     },
     {
+        path: 'edit-event/:uid',
+        redirectTo: 'events/:uid',
+        pathMatch: 'full'
+    },
+    {
         path: 'events/:uid',
         component: wpEvents_component_1.EventsComponent
     },

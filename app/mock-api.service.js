@@ -39,7 +39,7 @@ let MockApiService = class MockApiService {
                 date: "August 8, 2016",
                 time: "12:53 PM",
                 info: "This is the first test event for user 1",
-                eventId: 3,
+                eventID: 3,
                 uid: 1
             }
         ];
