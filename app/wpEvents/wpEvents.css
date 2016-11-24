@@ -1,9 +1,15 @@
 .container {
-    background-color: white;
+    /*background-color: white;
+	opacity: 0.5;*/
+	background:rgba(255,255,255, 0.3);
+	/*background: transparent; /*new addition*/
+	border: solid 2px black; /*new addition*/
+	/*border-radius: 25px; /*new addition*/
     margin: 0 auto;
-	margin-top: -100px;
-	width: 1000px;
-    height:100%;
+	margin-top: -4%; /*changed*/
+	width: 900px;
+    height: 88vh; /*changed*/
+	overflow-y: scroll; /*new addition*/
 }
 
 .media-left img {
@@ -22,10 +28,33 @@
 }
 
 .glyphicon-edit {
-	color: darkslateblue;
+	color: palegreen;
 }
-
 
 .glyphicon-trash {
 	color: red;
+}
+
+.panel panel-default {
+	background:rgba(255,255,255, 0.3);
+}
+
+.panel-body {
+	background:transparent;
+}
+
+.media-body {
+	background:transparent;
+}
+
+.container::-webkit-scrollbar { 
+    display: none; 
+}
+
+.media {
+	background: transparent;
+}
+
+.btn btn-primary pull-right {
+	background-color: palegreen;
 }
