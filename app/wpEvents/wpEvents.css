@@ -1,9 +1,15 @@
 .container {
-    background-color: white;
+    /*background-color: white;
+	opacity: 0.5;*/
+	background:rgba(255,255,255, 0.3);
+	/*background: transparent; /*new addition*/
+	border: solid 2px black; /*new addition*/
+	/*border-radius: 25px; /*new addition*/
     margin: 0 auto;
-	margin-top: -100px;
-	width: 1000px;
-    height:100%;
+	margin-top: -4%; /*changed*/
+	width: 900px;
+    height: 88vh; /*changed*/
+	overflow-y: scroll; /*new addition*/
 }
 
 .media-left img {
@@ -11,29 +17,44 @@
 }
 
 .glyphicon {
-	font-size: 16px;
-	margin-right: 3px;
+	font-size: 11px;
+	padding-left: 5px;
+	top: 4px;
+	opacity: 0.3;
 }
 
-
-.button:hover {
-	opacity:0.9;
+.glyphicon:hover {
+	opacity: 0.9;
 }
 
 .glyphicon-edit {
-	color: darkslateblue;
+	color: palegreen;
 }
-
 
 .glyphicon-trash {
-	color: darkred;
-	opacity: 0.7;
+	color: red;
 }
 
-h4 {
-	display: inline;
+.panel panel-default {
+	background:rgba(255,255,255, 0.3);
 }
 
-#editbtn {
-	margin-right: 10px;
+.panel-body {
+	background:transparent;
+}
+
+.media-body {
+	background:transparent;
+}
+
+.container::-webkit-scrollbar { 
+    display: none; 
+}
+
+.media {
+	background: transparent;
+}
+
+.btn btn-primary pull-right {
+	background-color: palegreen;
 }

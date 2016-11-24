@@ -1,38 +1,22 @@
 <!-- Thanks to "https://codepen.io/motorlatitude/pen/JFkro" for the css inspiration -->
-<div class="body"></div>
-<h1> WePlan </h1>
+<div class="body">
+<h1> We<span>Plan</span></h1>
 <br><br><br>
 <h2> Your Events. Your Way. </h2>
 <br>
-    <div class="grad"></div>
+<div class="grad"></div>
 		<!--<div class="header">
 			<div>We<span>Plan</span>
             </div>
 		</div>-->
 		<br>
-<!--
+
 <div class="login">
+    <div class=login-header>Please Log In</div>
     <input type="text" placeholder="username" name="user"><br>
     <input type="password" placeholder="password" name="password"><br>
     <input *ngIf="pwconf" type="password" placeholder="password confirmation" name="password_confirmation"><br>
     <input type="button" value="{{login_text}}" (click)="showLoginForm()">
     <input type="button" value="{{signup_text}}" (click)="showSignUpForm()">
 </div>
--->
-<div class="login">
-  <form role="form" (submit)="login($event, username.value, password.value)">
-  <div class="form-group">
-    <!--<label for="username">Username</label>-->
-    <input type="text" #username class="form-control" id="username" placeholder="Username">
-  </div>
-  <div class="form-group">
-    <!--<label for="password">Password</label>-->
-    <input type="password" #password class="form-control" id="password" placeholder="Password">
-  </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-    <button [routerLink]="['/signup']" class="btn btn-default">Signup</button>
-</form>
 </div>
-
-
-
