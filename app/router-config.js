@@ -41,6 +41,10 @@ exports.routeConfig = [
         component: wpEvents_component_1.EventsComponent
     },
     {
+        path: 'edit-event/:uid/add',
+        component: wpEditEvent_component_1.EditEventComponent
+    },
+    {
         path: 'edit-event/:uid/:id',
         component: wpEditEvent_component_1.EditEventComponent
     },

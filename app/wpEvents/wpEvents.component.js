@@ -40,8 +40,12 @@ let EventsComponent = class EventsComponent {
             //console.log(this.events);
         });
     }
-    ngOnInit() {
-        //moved params to constructor
+    delete(l_event, index) {
+        this.eventRepositoryService.delete(l_event).then(() => {
+            this.events.splice(index, 1);
+            this.eventNumber = this.eventNumber - 1;
+            alert(`${l_event.eventTitle} was deleted!!`);
+        });
     }
 };
 EventsComponent = __decorate([

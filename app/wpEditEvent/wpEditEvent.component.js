@@ -44,7 +44,7 @@ let EditEventComponent = class EditEventComponent {
             this.uid = uid;
             // Now Create event
             this.l_event = new event_1.Event(this.eventTitle, this.orgName, this.eventType, this.date, this.time, this.info, uid);
-            //this.id = this.event.id; //no id being given here is it taken care of internally? I know it will on real backend
+            this.id = this.l_event.id; //no id being given here is it taken care of internally? I know it will on real backend
             return;
         }
         else if (id) {

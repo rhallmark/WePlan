@@ -44,6 +44,7 @@ export class EditEventComponent {
 
   private loadEvent(uid,id){
  		if(!id) {
+
 			this.title = 'New Event';
 			// Create the Event such that blank properties are defined
 			// title, year, imagepath
@@ -56,7 +57,7 @@ export class EditEventComponent {
 			this.uid = uid;
 			// Now Create event
 			this.l_event = new Event(this.eventTitle, this.orgName, this.eventType, this.date, this.time, this.info, uid);
-			//this.id = this.event.id; //no id being given here is it taken care of internally? I know it will on real backend
+			this.id = this.l_event.id; //no id being given here is it taken care of internally? I know it will on real backend
 			return;
 		}
     else if(id) {

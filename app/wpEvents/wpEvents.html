@@ -1,6 +1,6 @@
 <div class="container">
   <br><br>
-  <button type="button" class="btn btn-primary pull-right" routerLink="add">
+  <button type="button" class="btn btn-primary pull-right" routerLink="/edit-event/{{uid}}/add">
 	  New Event
   </button>
   
@@ -19,8 +19,20 @@
         <div class="media-body">
           <div>
             <h4 class="media-heading">{{ event.eventTitle }}</h4>
-            <button id="editbtn" type="button" class="btn btn-primary pull-right" routerLink="/edit-event/{{event.uid}}/{{event.id}}"><i class="glyphicon glyphicon-edit" ></i>Edit</button>
-            <button id="editbtn" type="button" class="btn btn-danger pull-right" routerLink=""><i class="glyphicon glyphicon-trash" ></i>Delete</button>
+            <button 
+              id="editbtn" 
+              type="button" 
+              class="btn btn-primary pull-right" 
+              routerLink="/edit-event/{{event.uid}}/{{event.id}}">
+              <i class="glyphicon glyphicon-edit" ></i>Edit
+            </button>
+            <button 
+              id="editbtn" 
+              type="button" 
+              class="btn btn-danger pull-right" 
+              (click)="delete(event,index)">
+              <i class="glyphicon glyphicon-trash" ></i>Delete
+            </button>
             
               
             <ul>
@@ -35,8 +47,9 @@
         </div>
       </div>
     </div>
-    <div *ngIf="eventNumber == 0" class="well">
-      You have not yet planned an event. Click "New Event" to get started planning!
+    <div *ngIf="eventNumber == 0" class="well" style="text-align: center;">
+      You currently have no events planned. <br>
+      Click "New Event" to get started planning!
     </div>
 
     </div>

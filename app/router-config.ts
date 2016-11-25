@@ -51,6 +51,10 @@ export const routeConfig: Route[] = [
         component: EventsComponent
     },
     {
+        path: 'edit-event/:uid/add', // For new events
+        component: EditEventComponent
+    },
+    {
         path: 'edit-event/:uid/:id', // id here refers to the event id
         component: EditEventComponent
     },

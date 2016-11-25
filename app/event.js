@@ -1,6 +1,6 @@
 "use strict";
 class Event {
-    constructor(eventName, orgName, type, date, time, additionalInfo, uid, eventID) {
+    constructor(eventName, orgName, type, date, time, additionalInfo, uid, id) {
         //Need to obtain ID from DB
         this.eventTitle = eventName;
         this.orgName = orgName;
@@ -9,10 +9,9 @@ class Event {
         this.time = time;
         this.info = additionalInfo;
         this.uid = uid;
-        if (eventID) {
-            this.eventID = eventID;
+        if (id) {
+            this.id = id;
         }
-        this.id = eventID;
     }
 }
 exports.Event = Event;
