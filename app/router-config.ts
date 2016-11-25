@@ -51,7 +51,7 @@ export const routeConfig: Route[] = [
         component: EventsComponent
     },
     {
-        path: 'edit-event/:uid/:id',
+        path: 'edit-event/:uid/:id', // id here refers to the event id
         component: EditEventComponent
     },
     fallbackRoute

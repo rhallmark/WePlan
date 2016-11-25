@@ -25,7 +25,6 @@ let EventsComponent = class EventsComponent {
         this.title = "My Events";
         //console.log(this.uid);
         eventRepositoryService.list().then(response => {
-            console.log(response);
             this.allEvents = response;
             // Specifying which events to show
             // Tihs is not secure or effecient

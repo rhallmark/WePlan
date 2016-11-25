@@ -12,8 +12,8 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
 
 export class EventsComponent { 
 	title : string;
-	allEvents : Event[]=[];
-	events : Event[]=[];
+	allEvents : Event[] = [];
+	events : Event[] = [];
 	eventNumber : number;
 	uid: number;
 
@@ -30,7 +30,6 @@ export class EventsComponent {
 
 
 		eventRepositoryService.list().then(response => {
-				console.log(response);
 				this.allEvents = response;
 
 				// Specifying which events to show

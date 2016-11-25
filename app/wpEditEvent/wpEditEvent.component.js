@@ -27,8 +27,6 @@ let EditEventComponent = class EditEventComponent {
         this.route.params.forEach((params) => {
             let id = +params['id'];
             let uid = +params['uid'];
-            this.uid = uid;
-            this.eventID = id;
             this.loadEvent(uid, id);
         });
     }
@@ -43,24 +41,25 @@ let EditEventComponent = class EditEventComponent {
             this.date = "";
             this.time = "";
             this.info = "";
+            this.uid = uid;
             // Now Create event
-            //this.event = new Event(this.eventTitle, this.orgName, this.eventType, this.date, this.time, this.info, uid);
-            //this.eventID = this.event.eventID; //no id being given here is it taken care of internally? I know it will on real backend
+            this.l_event = new event_1.Event(this.eventTitle, this.orgName, this.eventType, this.date, this.time, this.info, uid);
+            //this.id = this.event.id; //no id being given here is it taken care of internally? I know it will on real backend
             return;
         }
         else if (id) {
             // Need to grab an event by id. Inside promise set all variables
             this.eventService.getEvent(id).then((response) => {
-                this.event = response;
-                console.log(this.event);
-                this.title = "Editing Event: " + this.event.eventTitle;
-                this.eventTitle = this.event.eventTitle;
-                this.orgName = this.event.orgName;
-                this.eventType = this.event.eventType;
-                this.date = this.event.date;
-                this.time = this.event.time;
-                this.info = this.event.info;
-                this.eventID = id;
+                this.l_event = response;
+                this.title = "Editing Event: " + this.l_event.eventTitle;
+                this.eventTitle = this.l_event.eventTitle;
+                this.orgName = this.l_event.orgName;
+                this.eventType = this.l_event.eventType;
+                this.date = this.l_event.date;
+                this.time = this.l_event.time;
+                this.info = this.l_event.info;
+                this.id = this.l_event.id;
+                this.uid = uid;
             });
         }
     }
@@ -69,20 +68,18 @@ let EditEventComponent = class EditEventComponent {
             .then(() => alert(message));
     }
     saveData() {
-        this.event = new event_1.Event(this.eventTitle, this.orgName, this.eventType, this.date, this.time, this.info, this.uid, this.eventID);
+        this.l_event = new event_1.Event(this.eventTitle, this.orgName, this.eventType, this.date, this.time, this.info, this.uid, this.id);
         // If the event has an ID, update the event
-        if (this.event.eventID) {
-            console.log(this.event);
-            console.log('has id, updating');
-            this.eventService.update(this.event)
-                .then(() => this.returnToList(`${this.event.eventTitle} has been updated!`));
+        if (this.l_event.id) {
+            this.eventService.update(this.l_event)
+                .then(() => this.returnToList(`${this.l_event.eventTitle} has been updated!`));
         }
         else {
             //otherwise we need to assign it an id
             //NEED CODE TO ASSIGN EVENT ID
-            this.eventID = 100;
-            this.eventService.add(this.event)
-                .then(() => this.returnToList(`${this.event.eventTitle} has been added!`));
+            this.id = 100;
+            this.eventService.add(this.l_event)
+                .then(() => this.returnToList(`${this.l_event.eventTitle} has been added!`));
         }
     }
     onSubmit() {

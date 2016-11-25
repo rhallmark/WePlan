@@ -20,9 +20,9 @@ export class EventRepositoryService {
 
 
 	//This should get an Event based upon an id
-	public getEvent(id : number) : Promise<Event> {
+	public getEvent(id : number) : Promise<any> {
 		var pluck = (response) => (response && response.length) ? response[0] : undefined;
-		return this.http.get(`${this._apiUrl}/?eventID=${id}`)
+		return this.http.get(`${this._apiUrl}/?id=${id}`)
 			.toPromise()
 			.then((response) => pluck(response.json().data))
 			.catch((response) => alert(response.json().error));
@@ -37,9 +37,10 @@ export class EventRepositoryService {
 	}
 
 	public update(l_event) : Promise<any> {
-		console.log('in service');
-		console.log(l_event);
-		return this.http.put(`${this._apiUrl}/${l_event.eventID}`, l_event)
+
+		// Spent four hours debugging the fact that 'id' is a key word
+		// EventID could not be used. ?
+		return this.http.put(`${this._apiUrl}/${l_event.id}`, l_event)
 			.toPromise()
 			.then(() => l_event)
 			.catch(response => alert(response.json().error));
@@ -47,7 +48,7 @@ export class EventRepositoryService {
 
 	public delete(l_event) : Promise<void>{
 
-		return this.http.delete(`${this._apiUrl}/${l_event.eventID}`,l_event)
+		return this.http.delete(`${this._apiUrl}/${l_event.id}`,l_event)
 		.toPromise()
 		.catch(response => alert(response.json().error));
 	}
