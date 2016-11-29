@@ -27,7 +27,6 @@
             <h3>Basic Event Information</h3>
           </div>
           <div class="panel-body">
-            <!--is ngSubmit needed?-->
             <div>
               <div class="form-group">
 
@@ -39,7 +38,7 @@
                   name="eventTitle"
                   class="form-control"
                   id="eventTitle"
-                  [(ngModel)]="eventTitle"
+                  [(ngModel)]="l_eventTitle"
                   required>
                   <br>
 
@@ -51,64 +50,63 @@
                   name="organization"
                   class="form-control"
                   id="org"
-                  [(ngModel)]="orgName"
+                  [(ngModel)]="l_orgName"
                   required>
                   <br>
 
-                  <!--Determine how to make this not despecify due to typing -->
-                <label for = "eventType">
-                  What kind of event are you planning?
+
+                  <!--Determine how to make this not despecify due to input letters -->
+                <label for="eventType">
+                  What type of event are you planning?
                 </label>
                 <input 
                   list="o_eventType"
                   name="eventType"
                   class="form-control"
-                  id="o_eventType"
-                  [(ngModel)]="eventType"
-                  required>
+                  id="eventType"
+                  [(ngModel)]="l_eventType" />
                   <datalist id="o_eventType">
                     <option *ngFor="let eventType of o_eventType" value={{eventType}}>
                   </datalist>
                 <br>
 
-              <label for="date">
-                What will be the date of your event?
-              </label>
-              <input 
-                type="text" 
-                name="date"
-                class="form-control"
-                id="date"
-                [(ngModel)]="date"
-                required>
+                <label for="date">
+                  What will be the date of your event?
+                </label>
+                <input 
+                  type="text" 
+                  name="date"
+                  class="form-control"
+                  id="date"
+                  [(ngModel)]="l_date"
+                  required>
+                  <br>
+
+                <label for="time">
+                  What will be the time of your event?
+                </label>
+                <input 
+                  type="text" 
+                  name="time"
+                  class="form-control"
+                  id="time"
+                  [(ngModel)]="l_time"
+                  required>
+                  <br>
+
+                <label for="info">
+                  Additional information:
+                </label>
+                <input 
+                  type="text" 
+                  name="info"
+                  class="form-control"
+                  id="info"
+                  [(ngModel)]="l_info"
+                  required>
                 <br>
 
-              <label for="time">
-                What will be the time of your event?
-              </label>
-              <input 
-                type="text" 
-                name="time"
-                class="form-control"
-                id="time"
-                [(ngModel)]="time"
-                required>
-                <br>
-
-              <label for="info">
-                Additional information:
-              </label>
-              <input 
-                type="text" 
-                name="info"
-                class="form-control"
-                id="info"
-                [(ngModel)]="info"
-                required>
-              <br>
-
-            </div>
-
+              </div>
 
             </div>
           </div>
@@ -123,6 +121,8 @@
             <h3>Venue Information</h3>
           </div>
           <div class="panel-body">
+            <div class="form-group">
+            </div>
           </div>
           <div class="panel-footer">
             <button type="button" class="btn btn-primary pull-right" (click)="saveData()">Save</button>
@@ -135,6 +135,46 @@
             <h3>Food Information</h3>
           </div>
           <div class="panel-body">
+            <div class="form-group">
+
+              <label for = "bld">
+                What meal category would you like to choose from for your event?
+              </label>
+              <input 
+                list="o_bld"
+                name="bld"
+                class="form-control"
+                id="bld"
+                [(ngModel)]="l_bld"
+                required>
+                <datalist id="o_bld">
+                  <option *ngFor="let bld of o_bld" value={{bld}}>
+                </datalist>
+              <br>
+
+              <label for = "foodType">
+                What type of food would you like at your event?
+              </label>
+              <input 
+                list="o_foodType"
+                name="foodType"
+                class="form-control"
+                id="foodType"
+                [(ngModel)]="l_foodType"
+                required>
+                <datalist id="o_foodType">
+                  <option *ngFor="let foodType of o_foodType" value={{foodType}}>
+                </datalist>
+              <br>
+
+              <label for = "dessert">
+                Would you like to add dessert?
+              </label>
+              
+
+              <!-- Add restaurant choice here -->
+
+            </div>
           </div>
           <div class="panel-footer">
             <button type="button" class="btn btn-primary pull-right" (click)="saveData()">Save</button>
@@ -147,6 +187,8 @@
             <h3>Equipment Rentals</h3>
           </div>
           <div class="panel-body">
+            <div class="form-group">
+            </div>
           </div>
           <div class="panel-footer">
             <button type="button" class="btn btn-primary pull-right" (click)="saveData()">Save</button>

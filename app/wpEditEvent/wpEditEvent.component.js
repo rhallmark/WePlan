@@ -31,6 +31,8 @@ let EditEventComponent = class EditEventComponent {
         this.rent_btn = this.not_selected;
         // Event Options
         this.o_eventType = ["Other", "Weekly Meeting", "Interest Meeting", "Special Event", "Fundraising"];
+        this.o_foodType = ["Mexican", "Italian", "Asian", "American"];
+        this.o_bld = ["Breakfast", "Lunch", "Dinner"];
         this.o_evntSize = ["Other", "Less than 25 People", "25 - 50 people", "Greater than 50 peoples"];
     }
     ngOnInit() {
@@ -117,15 +119,18 @@ let EditEventComponent = class EditEventComponent {
             this.title = 'New Event';
             // Create the Event such that blank properties are defined
             // title, year, imagepath
-            this.eventTitle = "";
-            this.orgName = "";
-            this.eventType = "";
-            this.date = "";
-            this.time = "";
-            this.info = "";
-            this.uid = uid;
+            this.l_eventTitle = "";
+            this.l_orgName = "";
+            this.l_eventType = "";
+            this.l_date = "";
+            this.l_time = "";
+            this.l_info = "";
+            // Set food info
+            this.l_foodType = "";
+            this.l_bld = "";
+            this.l_uid = uid;
             // Now Create event
-            this.l_event = new event_1.Event(this.eventTitle, this.orgName, this.eventType, this.date, this.time, this.info, uid);
+            this.l_event = new event_1.Event(this.l_eventTitle, this.l_orgName, this.l_eventType, this.l_date, this.l_time, this.l_info, uid);
             this.id = this.l_event.id; //no id being given here is it taken care of internally? I know it will on real backend
             return;
         }
@@ -134,23 +139,29 @@ let EditEventComponent = class EditEventComponent {
             this.eventService.getEvent(id).then((response) => {
                 this.l_event = response;
                 this.title = "Editing Event: " + this.l_event.eventTitle;
-                this.eventTitle = this.l_event.eventTitle;
-                this.orgName = this.l_event.orgName;
-                this.eventType = this.l_event.eventType;
-                this.date = this.l_event.date;
-                this.time = this.l_event.time;
-                this.info = this.l_event.info;
+                this.l_eventTitle = this.l_event.eventTitle;
+                this.l_orgName = this.l_event.orgName;
+                this.l_eventType = this.l_event.eventType;
+                this.l_date = this.l_event.date;
+                this.l_time = this.l_event.time;
+                this.l_info = this.l_event.info;
                 this.id = this.l_event.id;
-                this.uid = uid;
+                // get food info
+                this.l_foodType = this.l_event.foodType;
+                this.l_bld = this.l_event.bld;
+                this.l_uid = uid;
             });
         }
     }
     returnToList(message) {
-        this.router.navigateByUrl(`events/${this.uid}`)
+        this.router.navigateByUrl(`events/${this.l_uid}`)
             .then(() => alert(message));
     }
     saveData() {
-        this.l_event = new event_1.Event(this.eventTitle, this.orgName, this.eventType, this.date, this.time, this.info, this.uid, this.id);
+        this.l_event = new event_1.Event(this.l_eventTitle, this.l_orgName, this.l_eventType, this.l_date, this.l_time, this.l_info, this.l_uid, this.id);
+        // Update food info upon save
+        this.l_event.foodType = this.l_foodType;
+        this.l_event.bld = this.l_bld;
         // If the event has an ID, update the event
         if (this.l_event.id) {
             this.eventService.update(this.l_event)
@@ -166,7 +177,7 @@ let EditEventComponent = class EditEventComponent {
     }
     onSubmit() {
         this.submitted = true;
-        console.log(this.orgName);
+        console.log(this.l_orgName);
     }
     newEvent($event) {
         console.log($event);

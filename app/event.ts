@@ -9,6 +9,10 @@ export class Event {
     uid: number;
     id:number ;
 
+    // Food
+    foodType: string;
+    bld: string;
+
     constructor(eventName:string, orgName:string, type:string, date:string, time:string, additionalInfo:string, uid:number, id?:number){ 
         //Need to obtain ID from DB
         this.eventTitle = eventName;

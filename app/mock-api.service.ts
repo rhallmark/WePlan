@@ -14,6 +14,8 @@ export class MockApiService implements InMemoryDbService {
                 date: "August 8, 2016",
                 time: "12:53 PM",
                 info: "This is the first test event for user 1",
+                foodType: "",
+                bld: "",
                 uid: 1
             },
             {
@@ -24,6 +26,8 @@ export class MockApiService implements InMemoryDbService {
                 date: "August 8, 2016",
                 time: "12:53 PM",
                 info: "This is the first test event for user 1",
+                foodType: "",
+                bld: "",
                 uid: 2
             },
             {
@@ -34,6 +38,8 @@ export class MockApiService implements InMemoryDbService {
                 date: "August 8, 2016",
                 time: "12:53 PM",
                 info: "This is the first test event for user 1",
+                foodType: "",
+                bld: "",
                 uid: 1
             }
         ];

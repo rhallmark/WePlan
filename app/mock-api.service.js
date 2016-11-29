@@ -20,6 +20,8 @@ let MockApiService = class MockApiService {
                 date: "August 8, 2016",
                 time: "12:53 PM",
                 info: "This is the first test event for user 1",
+                foodType: "",
+                bld: "",
                 uid: 1
             },
             {
@@ -30,6 +32,8 @@ let MockApiService = class MockApiService {
                 date: "August 8, 2016",
                 time: "12:53 PM",
                 info: "This is the first test event for user 1",
+                foodType: "",
+                bld: "",
                 uid: 2
             },
             {
@@ -40,6 +44,8 @@ let MockApiService = class MockApiService {
                 date: "August 8, 2016",
                 time: "12:53 PM",
                 info: "This is the first test event for user 1",
+                foodType: "",
+                bld: "",
                 uid: 1
             }
         ];
