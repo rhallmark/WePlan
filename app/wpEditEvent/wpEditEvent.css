@@ -78,22 +78,23 @@ h3 {
     height : 80px;
     text-align: center;
     vertical-align: middle;
-
 }
 
-.panel-heading > .btn {
-    margin-top: 15px;
 
+.panel-heading > .btn, .panel-heading > h4 {
+    margin-top: 15px;
 }
 
 .panel-footer {
     height : 50px;
 }
 
-.panel-footer > .btn, .panel-heading > .btn{
+.panel-footer > .btn{
     width : 80px;
+}
 
-
+.panel-heading > .btn{
+    width : 70px;
 }
 
 .panel-footer > button:hover {
@@ -106,4 +107,8 @@ h3 {
 
 #editbtn {
 	margin-right: 10px;
+}
+
+#selectors {
+	width : 140px;
 }

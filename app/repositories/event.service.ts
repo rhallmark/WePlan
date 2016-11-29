@@ -8,9 +8,19 @@ export class EventRepositoryService {
 
 	private _apiUrl = 'app/events';
 
+	private _restUrl = '10.0.0.0';
+
 	constructor(private http: Http){
 
 	}
+
+	public getRest() : Promise<any[]> {
+		return this.http.get(`${this._restUrl}:8000/api/restaurants`)
+			.toPromise()
+			.then(response => response.json().data as any[]);
+	}
+
+
 
 	public list() : Promise<Event[]> {
 		return this.http.get(this._apiUrl)

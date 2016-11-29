@@ -15,6 +15,12 @@ let EventRepositoryService = class EventRepositoryService {
     constructor(http) {
         this.http = http;
         this._apiUrl = 'app/events';
+        this._restUrl = '10.0.0.0';
+    }
+    getRest() {
+        return this.http.get(`${this._restUrl}:8000/api/restaurants`)
+            .toPromise()
+            .then(response => response.json().data);
     }
     list() {
         return this.http.get(this._apiUrl)

@@ -7,124 +7,155 @@
     <div class="panel panel-default">
 
       <div class="panel-heading">
-        <button type="button" class="btn btn-default pull-right">Next<i class="glyphicon glyphicon-menu-right"></i></button>
-        <h4>Basic Info - Food - Venue - Equipment</h4>
-        <button type="button" class="btn btn-default pull-left"><i class="glyphicon glyphicon-menu-left"></i>Back</button>
+        <button type="button" class="btn btn-default pull-right" (click)="next()" >Next<i class="glyphicon glyphicon-menu-right"></i></button>
+
+        <button type="button" id="selectors" class={{info_btn}} (click)="changeDisplay('info')">Basic Information</button>
+ 
+        <button type="button" id="selectors" class={{venue_btn}} (click)="changeDisplay('venue')">Venue Information</button>
+
+        <button type="button" id="selectors" class={{food_btn}} (click)="changeDisplay('food')">Food Information</button>
+
+        <button type="button" id="selectors" class={{rent_btn}} (click)="changeDisplay('rent')">Equipment Rentals</button>
+
+        <button type="button" class="btn btn-default pull-left" (click)="back()"><i class="glyphicon glyphicon-menu-left"></i>Back</button>
       </div>
 
-      <div class="panel-heading">
-        <h3>Basic Event Information</h3>
-      </div>
+      <div [ngSwitch]="display">
 
-      <div class="panel-body">
-        <!--is ngSubmit needed?-->
-        <div>
-          <div class="form-group">
+        <div *ngSwitchCase="'info'">
+          <div class="panel-heading">
+            <h3>Basic Event Information</h3>
+          </div>
+          <div class="panel-body">
+            <!--is ngSubmit needed?-->
+            <div>
+              <div class="form-group">
 
-            <label for="eventTitle">
-              Event Title:
-            </label>
-            <input 
-              type="text" 
-              name="eventTitle"
-              class="form-control"
-              id="eventTitle"
-              [(ngModel)]="eventTitle"
-              required>
+                <label for="eventTitle">
+                  Event Title:
+                </label>
+                <input 
+                  type="text" 
+                  name="eventTitle"
+                  class="form-control"
+                  id="eventTitle"
+                  [(ngModel)]="eventTitle"
+                  required>
+                  <br>
+
+                <label for="organization">
+                  What organization are you with?
+                </label>
+                <input 
+                  type="text" 
+                  name="organization"
+                  class="form-control"
+                  id="org"
+                  [(ngModel)]="orgName"
+                  required>
+                  <br>
+
+                  <!--Determine how to make this not despecify due to typing -->
+                <label for = "eventType">
+                  What kind of event are you planning?
+                </label>
+                <input 
+                  list="o_eventType"
+                  name="eventType"
+                  class="form-control"
+                  id="o_eventType"
+                  [(ngModel)]="eventType"
+                  required>
+                  <datalist id="o_eventType">
+                    <option *ngFor="let eventType of o_eventType" value={{eventType}}>
+                  </datalist>
+                <br>
+
+              <label for="date">
+                What will be the date of your event?
+              </label>
+              <input 
+                type="text" 
+                name="date"
+                class="form-control"
+                id="date"
+                [(ngModel)]="date"
+                required>
+                <br>
+
+              <label for="time">
+                What will be the time of your event?
+              </label>
+              <input 
+                type="text" 
+                name="time"
+                class="form-control"
+                id="time"
+                [(ngModel)]="time"
+                required>
+                <br>
+
+              <label for="info">
+                Additional information:
+              </label>
+              <input 
+                type="text" 
+                name="info"
+                class="form-control"
+                id="info"
+                [(ngModel)]="info"
+                required>
               <br>
 
-            <label for="organization">
-              What organization are you with?
-            </label>
-            <input 
-              type="text" 
-              name="organization"
-              class="form-control"
-              id="org"
-              [(ngModel)]="orgName"
-              required>
-              <br>
+            </div>
 
-              <!--Determine how to make this not despecify due to typing -->
-            <label for = "eventType">
-              What kind of event are you planning?
-            </label>
-            <input 
-              list="o_eventType"
-              name="eventType"
-              class="form-control"
-              id="o_eventType"
-              [(ngModel)]="eventType"
-              required>
-              <datalist id="o_eventType">
-                <option *ngFor="let eventType of o_eventType" value={{eventType}}>
-              </datalist>
-            <br>
 
-            <!--datepicker not working? determine how to import jquery? -->
-            <!--Currently using strings for POC -->
-
-          <!--
-            <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-            <title>jQuery UI Datepicker - Default functionality</title>
-            <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-            <link rel="stylesheet" href="/resources/demos/style.css">
-            <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-            <script>
-            $( function() {
-            $( "#datepicker" ).datepicker();
-            } );
-            </script>
-            -->
-
-          <label for="date">
-            What will be the date of your event?
-          </label>
-          <input 
-            type="text" 
-            name="date"
-            class="form-control"
-            id="date"
-            [(ngModel)]="date"
-            required>
-            <br>
-
-          <label for="time">
-            What will be the time of your event?
-          </label>
-          <input 
-            type="text" 
-            name="time"
-            class="form-control"
-            id="time"
-            [(ngModel)]="time"
-            required>
-            <br>
-
-          <label for="info">
-            Additional information:
-          </label>
-          <input 
-            type="text" 
-            name="info"
-            class="form-control"
-            id="info"
-            [(ngModel)]="info"
-            required>
-          <br>
-
+            </div>
+          </div>
+          <div class="panel-footer">
+            <button type="button" class="btn btn-primary pull-right" (click)="saveData()">Save</button>
+            <button type="button" class="btn btn-danger pull-left"(click)="returnToList('No Edits Made')">Discard</button>
+          </div>
         </div>
 
-
+        <div *ngSwitchCase="'venue'">
+          <div class="panel-heading">
+            <h3>Venue Information</h3>
+          </div>
+          <div class="panel-body">
+          </div>
+          <div class="panel-footer">
+            <button type="button" class="btn btn-primary pull-right" (click)="saveData()">Save</button>
+            <button type="button" class="btn btn-danger pull-left"(click)="returnToList('No Edits Made')">Discard</button>
+          </div>
         </div>
+
+        <div *ngSwitchCase="'food'">
+          <div class="panel-heading">
+            <h3>Food Information</h3>
+          </div>
+          <div class="panel-body">
+          </div>
+          <div class="panel-footer">
+            <button type="button" class="btn btn-primary pull-right" (click)="saveData()">Save</button>
+            <button type="button" class="btn btn-danger pull-left"(click)="returnToList('No Edits Made')">Discard</button>
+          </div>
+        </div>
+
+        <div *ngSwitchCase="'rent'">
+          <div class="panel-heading">
+            <h3>Equipment Rentals</h3>
+          </div>
+          <div class="panel-body">
+          </div>
+          <div class="panel-footer">
+            <button type="button" class="btn btn-primary pull-right" (click)="saveData()">Save</button>
+            <button type="button" class="btn btn-danger pull-left"(click)="returnToList('No Edits Made')">Discard</button>
+          </div>
+        </div>
+
       </div>
 
-      <div class="panel-footer">
-        <button type="button" class="btn btn-primary pull-right" (click)="saveData()">Save</button>
-        <button type="button" class="btn btn-danger pull-left"(click)="returnToList('No Edits Made')">Discard</button>
-      </div>
 
     </div>
   </div>

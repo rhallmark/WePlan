@@ -19,6 +19,16 @@ let EditEventComponent = class EditEventComponent {
         this.router = router;
         this.eventService = eventService;
         this.submitted = false;
+        // Buttons 
+        //buttons: string[] = ["info","venue","food","rent"];
+        this.display = "info";
+        this.not_selected = "btn btn-primary";
+        this.selected = "btn btn-info";
+        //current_btn: string = "info";
+        this.info_btn = this.selected;
+        this.venue_btn = this.not_selected;
+        this.food_btn = this.not_selected;
+        this.rent_btn = this.not_selected;
         // Event Options
         this.o_eventType = ["Other", "Weekly Meeting", "Interest Meeting", "Special Event", "Fundraising"];
         this.o_evntSize = ["Other", "Less than 25 People", "25 - 50 people", "Greater than 50 peoples"];
@@ -29,6 +39,78 @@ let EditEventComponent = class EditEventComponent {
             let uid = +params['uid'];
             this.loadEvent(uid, id);
         });
+    }
+    changeDisplay(display) {
+        this.display = display;
+        if (this.display === 'info') {
+            this.info_btn = this.selected;
+            this.venue_btn = this.not_selected;
+            this.food_btn = this.not_selected;
+            this.rent_btn = this.not_selected;
+        }
+        else if (this.display === 'venue') {
+            this.info_btn = this.not_selected;
+            this.venue_btn = this.selected;
+            this.food_btn = this.not_selected;
+            this.rent_btn = this.not_selected;
+        }
+        else if (this.display === 'food') {
+            this.info_btn = this.not_selected;
+            this.venue_btn = this.not_selected;
+            this.food_btn = this.selected;
+            this.rent_btn = this.not_selected;
+        }
+        else if (this.display === 'rent') {
+            this.info_btn = this.not_selected;
+            this.venue_btn = this.not_selected;
+            this.food_btn = this.not_selected;
+            this.rent_btn = this.selected;
+        }
+        else {
+            console.log("You shouldn't be here..");
+        }
+    }
+    next() {
+        if (this.display === "info") {
+            this.display = "venue";
+            this.changeDisplay("venue");
+        }
+        else if (this.display === "venue") {
+            this.display = "food";
+            this.changeDisplay("food");
+        }
+        else if (this.display === "food") {
+            this.display = "rent";
+            this.changeDisplay("rent");
+        }
+        else if (this.display === "rent") {
+            this.display = "info";
+            this.changeDisplay("info");
+        }
+        else {
+            console.log("You shouldn't be here..");
+        }
+    }
+    back() {
+        if (this.display === "info") {
+            this.display = "rent";
+            this.changeDisplay("rent");
+        }
+        else if (this.display === "venue") {
+            this.display = "info";
+            this.changeDisplay("info");
+        }
+        else if (this.display === "food") {
+            this.display = "venue";
+            this.changeDisplay("venue");
+        }
+        else if (this.display === "rent") {
+            this.display = "food";
+            this.changeDisplay("food");
+        }
+        else {
+            console.log("You shouldn't be here..");
+        }
     }
     loadEvent(uid, id) {
         if (!id) {
