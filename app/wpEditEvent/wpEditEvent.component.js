@@ -33,7 +33,13 @@ let EditEventComponent = class EditEventComponent {
         this.o_eventType = ["Other", "Weekly Meeting", "Interest Meeting", "Special Event", "Fundraising"];
         this.o_foodType = ["Mexican", "Italian", "Asian", "American"];
         this.o_bld = ["Breakfast", "Lunch", "Dinner"];
-        this.o_evntSize = ["Other", "Less than 25 People", "25 - 50 people", "Greater than 50 peoples"];
+        this.o_eventSize = ["Other", "Less than 25 People", "25 - 50 people", "Greater than 50 peoples"];
+        this.o_setting = ["indoor", "outdoor"];
+        this.o_location = ["Hughes Trigg", "Caruth Hall", "Embry", "Fondren Library", "George W. Bush Presidential Library",
+            "The Boulevard", "Dallas Hall Lawn"];
+        this.o_rent = ["Tables & Chairs", "Lights", "Sound System", "Decorations", "Projector", "White Board"];
+        this.checkboxes = [{ label: 'Tables & Chairs' }, { label: 'Lights' }, { label: 'Sound System' }, { label: 'Decorations' },
+            { label: 'Projector' }, { label: 'White Board' }];
     }
     ngOnInit() {
         this.route.params.forEach((params) => {
@@ -128,6 +134,12 @@ let EditEventComponent = class EditEventComponent {
             // Set food info
             this.l_foodType = "";
             this.l_bld = "";
+            // Set venue info
+            this.l_eventSize = "";
+            this.l_setting = "";
+            this.l_location = "";
+            // Set location info
+            this.l_checkboxes = this.checkboxes;
             this.l_uid = uid;
             // Now Create event
             this.l_event = new event_1.Event(this.l_eventTitle, this.l_orgName, this.l_eventType, this.l_date, this.l_time, this.l_info, uid);
@@ -149,6 +161,14 @@ let EditEventComponent = class EditEventComponent {
                 // get food info
                 this.l_foodType = this.l_event.foodType;
                 this.l_bld = this.l_event.bld;
+                // get venue info
+                this.l_eventSize = this.l_event.eventSize;
+                this.l_setting = this.l_event.setting;
+                this.l_location = this.l_event.location;
+                // get equip info
+                this.l_checkboxes = this.l_event.checkboxes;
+                console.log('getting checkboxes');
+                console.log(this.l_checkboxes);
                 this.l_uid = uid;
             });
         }
@@ -162,6 +182,13 @@ let EditEventComponent = class EditEventComponent {
         // Update food info upon save
         this.l_event.foodType = this.l_foodType;
         this.l_event.bld = this.l_bld;
+        // Update venue info upon save
+        this.l_event.eventSize = this.l_eventSize;
+        this.l_event.setting = this.l_setting;
+        this.l_event.location = this.l_location;
+        // Update equipment info upon save
+        this.l_event.checkboxes = this.checkboxes;
+        console.log(this.checkboxes);
         // If the event has an ID, update the event
         if (this.l_event.id) {
             this.eventService.update(this.l_event)

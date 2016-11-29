@@ -30,7 +30,13 @@ export class EditEventComponent {
 	o_eventType: string[] = ["Other", "Weekly Meeting", "Interest Meeting", "Special Event", "Fundraising"];
 	o_foodType: string[] = ["Mexican", "Italian", "Asian", "American"];
 	o_bld: string[] = ["Breakfast", "Lunch", "Dinner"];
-	o_evntSize: string[] = ["Other", "Less than 25 People", "25 - 50 people", "Greater than 50 peoples"];
+	o_eventSize: string[] = ["Other", "Less than 25 People", "25 - 50 people", "Greater than 50 peoples"];
+	o_setting: string[] = ["indoor", "outdoor"];
+	o_location: string[] = ["Hughes Trigg", "Caruth Hall", "Embry", "Fondren Library", "George W. Bush Presidential Library",
+							"The Boulevard", "Dallas Hall Lawn"];
+	o_rent: string[]= ["Tables & Chairs", "Lights", "Sound System", "Decorations", "Projector", "White Board"];
+	checkboxes = [{label: 'Tables & Chairs'},{label: 'Lights'},{label: 'Sound System'},{label: 'Decorations'},
+					{label: 'Projector'},{label: 'White Board'}];
 
 	// Event Params
 	l_event: Event;
@@ -46,6 +52,15 @@ export class EditEventComponent {
 	// Food params
 	l_foodType: string;
 	l_bld: string;
+
+	// Venue params
+	l_eventSize: string;
+	l_setting: string;
+	l_location: string;
+
+	// Rentals
+	l_rent: string;
+	l_checkboxes: any;
 
 	constructor(private route: ActivatedRoute, //what does activatedRoute do?
               private router: Router,
@@ -156,6 +171,14 @@ export class EditEventComponent {
 				this.l_foodType = "";
 				this.l_bld = "";
 
+				// Set venue info
+				this.l_eventSize = "";
+				this.l_setting = "";
+				this.l_location = "";
+
+				// Set location info
+				this.l_checkboxes = this.checkboxes;
+
 				this.l_uid = uid;
 				// Now Create event
 				this.l_event = new Event(this.l_eventTitle, this.l_orgName, this.l_eventType, this.l_date, this.l_time, this.l_info, uid);
@@ -180,6 +203,17 @@ export class EditEventComponent {
 				this.l_foodType = this.l_event.foodType;
 				this.l_bld = this.l_event.bld;
 
+				// get venue info
+				this.l_eventSize = this.l_event.eventSize;
+				this.l_setting = this.l_event.setting;
+				this.l_location = this.l_event.location;
+
+				// get equip info
+				this.l_checkboxes = this.l_event.checkboxes;
+
+				console.log('getting checkboxes');
+				console.log(this.l_checkboxes);
+
 				this.l_uid = uid;
 			});
 		}
@@ -199,6 +233,15 @@ export class EditEventComponent {
 		  // Update food info upon save
 		  this.l_event.foodType = this.l_foodType;
 		  this.l_event.bld = this.l_bld;
+
+		  // Update venue info upon save
+		  this.l_event.eventSize = this.l_eventSize;
+		  this.l_event.setting = this.l_setting;
+		  this.l_event.location = this.l_location;
+
+		  // Update equipment info upon save
+		  this.l_event.checkboxes = this.checkboxes;
+		  console.log(this.checkboxes);
 
 		  // If the event has an ID, update the event
 		  if(this.l_event.id){

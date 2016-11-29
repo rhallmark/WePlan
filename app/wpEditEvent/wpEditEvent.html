@@ -121,8 +121,60 @@
             <h3>Venue Information</h3>
           </div>
           <div class="panel-body">
+          <div class="panel-body">
+            <h4>
+              Please choose a venue for your event.
+            </h4>
+            <br><br>
             <div class="form-group">
+
+              <label for = "bld">
+                How many attendees are you expecting for this event?
+              </label>
+              <input 
+                list="o_eventSize"
+                name="eventSize"
+                class="form-control"
+                id="eventSize"
+                [(ngModel)]="l_eventSize"
+                required>
+                <datalist id="o_eventSize">
+                  <option *ngFor="let eventSize of o_eventSize" value={{eventSize}}>
+                </datalist>
+              <br>
+
+              <label for = "setting">
+                Would you like an indoor or outdoor setting for your event?
+              </label>
+              <input 
+                list="o_setting"
+                name="setting"
+                class="form-control"
+                id="setting"
+                [(ngModel)]="l_setting"
+                required>
+                <datalist id="o_setting">
+                  <option *ngFor="let setting of o_setting" value={{setting}}>
+                </datalist>
+              <br>
+
+              <label for = "location">
+                Which Campus location would you like to book for your event?
+              </label>
+              <input 
+                list="o_location"
+                name="location"
+                class="form-control"
+                id="location"
+                [(ngModel)]="l_location"
+                required>
+                <datalist id="o_location">
+                  <option *ngFor="let location of o_location" value={{location}}>
+                </datalist>
+              <br>
+
             </div>
+          </div>
           </div>
           <div class="panel-footer">
             <button type="button" class="btn btn-primary pull-right" (click)="saveData()">Save</button>
@@ -135,6 +187,10 @@
             <h3>Food Information</h3>
           </div>
           <div class="panel-body">
+            <h4>
+              To help us help you, please fill out the type of food you would like at your event.
+            </h4>
+            <br><br>
             <div class="form-group">
 
               <label for = "bld">
@@ -166,11 +222,11 @@
                   <option *ngFor="let foodType of o_foodType" value={{foodType}}>
                 </datalist>
               <br>
-
+              <!--
               <label for = "dessert">
                 Would you like to add dessert?
               </label>
-              
+              -->   
 
               <!-- Add restaurant choice here -->
 
@@ -187,8 +243,34 @@
             <h3>Equipment Rentals</h3>
           </div>
           <div class="panel-body">
+            <h4>
+              Please select the equipment you need.
+            </h4>
+            <br><br>
             <div class="form-group">
+              <label for = "rent">
+                What equipment are you looking for?
+              </label>
+              <input 
+                list="o_rent"
+                name="rent"
+                class="form-control"
+                id="rent"
+                [(ngModel)]="l_rent"
+                required>
+                <datalist id="o_rent">
+                  <option *ngFor="let rent of o_rent" value={{rent}}>
+                </datalist>
+              <br>
             </div>
+
+            <!-- Not wokring, no time to fix
+          <label *ngFor="let cb of checkboxes">
+            <input type="checkbox" [checked]="cb.state" [(ngModel)]="cb.state">{{cb.label}}<br>
+          </label>
+          -->
+
+
           </div>
           <div class="panel-footer">
             <button type="button" class="btn btn-primary pull-right" (click)="saveData()">Save</button>
