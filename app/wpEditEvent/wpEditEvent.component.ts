@@ -84,7 +84,7 @@ export class EditEventComponent {
 			this.rent_btn = this.selected;
 		}
 		else{
-			console.log("You shouldn't be here..")
+			console.log("You shouldn't be here..");
 		}
 	}
 
@@ -106,7 +106,7 @@ export class EditEventComponent {
 			this.changeDisplay("info");
 		}
 		else{
-			console.log("You shouldn't be here..")
+			console.log("You shouldn't be here..");
 		}
 	}
 
@@ -128,7 +128,7 @@ export class EditEventComponent {
 			this.changeDisplay("food");
 		}
 		else{
-			console.log("You shouldn't be here..")
+			console.log("You shouldn't be here..");
 		}
 	}
 
