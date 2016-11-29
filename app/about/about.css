@@ -8,13 +8,14 @@ body{
 
 	color: #fff;
 	font-family: Arial;
-	font-size: 12px;
+	font-size: 18px;
+	overflow: scroll;
 }
 
 .body{
 	position: absolute;
-	top: -20px;
-	left: -20px;
+	top: -40px;
+	left: -40px;
 	right: -40px;
 	bottom: -40px;
 	width: auto;
@@ -23,15 +24,15 @@ body{
 	background-size: cover;
 	-webkit-filter: blur(5px);
 	z-index: -1;
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .grad{
 	position: absolute;
-	top: -20px;
-	left: -20px;
-	right: -40px;
-	bottom: -40px;
+	top: -10px;
+	left: -10px;
+	right: -10px;
+	bottom: -10px;
 	width: auto;
 	height: auto;
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.65))); /* Chrome,Safari4+ */
@@ -42,7 +43,7 @@ body{
 .container {
     background: white;
     top: -80px;
-    height: 850px;
+    height: 1000px;
 }
 
 .center {
@@ -52,14 +53,26 @@ body{
     height:100%;
 }
 #main {
-    background-color: white;
+    opacity: 1;
+}
+p{
+	font-family: Arial;
+	color: white;
 }
 
-h1, h2 {
+h1, h2{
+
+	text-shadow: 2px 2px #666666;
+	text-align: center;
+	color: white;
+}
+h3{
+		text-shadow: 2px 2px #666666;
     text-align: center;
+		color: white;
 }
 
 div.content {
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
